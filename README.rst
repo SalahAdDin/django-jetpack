@@ -4,7 +4,7 @@ Django Jetpack
 
 Django Jet Note
 ---------------
-This repository is a fork of the `Django Jet repo <https://github.com/geex-arts/django-jet>`_, which went inactive in March of 2016. This is an effort to keep the project alive, and allow the community to provide their input via Pull Requests.
+This project is a fork of the `Django Jet project <https://github.com/geex-arts/django-jet>`_, which went inactive in March of 2016. This is an effort to keep the project alive, and allow the community to provide their input via Pull Requests.
 
 **Modern template for Django admin interface with improved functionality**
 
