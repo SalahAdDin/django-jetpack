@@ -8,7 +8,7 @@ This repository is a fork of the `Django Jet repo <https://github.com/geex-arts/
 
 **Modern template for Django admin interface with improved functionality**
 
-    
+
 * Home page: NA
 * **Live Demo**: NA
 * Documentation: NA
@@ -35,7 +35,7 @@ Screenshots
 
 Beta
 ====
-Current version is still in beta phase. Use it at your own risk (though may be already enough workable).
+Current version is still in beta phase. While it is used in production by various users, proceed with caution.
 
 License
 =======
@@ -45,13 +45,13 @@ The GNU General Public License, Version 2
 Installation
 ============
 
-* Download and install latest version of Django JET:
+* Download and install latest version of Django Jetpack:
 
 .. code:: python
 
-    pip install django-jet
+    pip install django-jetpack
     # or
-    easy_install django-jet
+    easy_install django-jetpack
 
 * Add 'jet' application to the INSTALLED_APPS setting of your Django project settings.py file (note it should be before 'django.contrib.admin'):
 
@@ -169,6 +169,3 @@ Dashboard installation
 .. code:: python
 
         python manage.py collectstatic
-
-
-
