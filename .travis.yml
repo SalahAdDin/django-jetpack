@@ -15,7 +15,7 @@ env:
 before_install:
   - export DJANGO_SETTINGS_MODULE=jet.tests.settings
 install:
-  - pip install -q Django==$DJANGO --use-mirrors
+  - pip install -q Django==$DJANGO
   - pip install . --use-mirrors
   - pip install coverage==3.7.1
   - pip install coveralls==0.5
@@ -30,3 +30,11 @@ matrix:
       env: DJANGO=1.7.7
     - python: 2.6
       env: DJANGO=1.8.3
+    - python: 2.6
+      env: DJANGO=1.9.7
+    - python: 3.2
+      env: DJANGO=1.9.7
+    - python: 3.3
+      env: DJANGO=1.9.7
+    - python: pypy
+      env: DJANGO=1.9.7
