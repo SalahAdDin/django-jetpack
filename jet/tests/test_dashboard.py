@@ -1,7 +1,7 @@
+import django
 if django.__version__ == '1.6.11':
     pass
 else:
-    import django
     django.setup()
 from django.contrib.auth.models import User
 from django.test import TestCase, Client
