@@ -1,5 +1,5 @@
 import django
-if django.__version__ == '1.6.11':
+if django.get_version() == '1.6.11':
     pass
 else:
     django.setup()
