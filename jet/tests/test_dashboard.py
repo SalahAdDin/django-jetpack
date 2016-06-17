@@ -1,3 +1,5 @@
+import django
+django.setup()
 from django.contrib.auth.models import User
 from django.test import TestCase, Client
 from jet.dashboard.modules import LinkList, RecentActions

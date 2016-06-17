@@ -29,7 +29,7 @@ MIDDLEWARE_CLASSES = (
 )
 try:
     TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + [
-        'django.core.context_processors.request',
+        'django.core.context_processors.request'
     ]
 except TypeError:
     TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
