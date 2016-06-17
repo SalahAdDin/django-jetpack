@@ -1,29 +1,19 @@
 ==========
-Django JET
+Django Jetpack
 ==========
 
-.. image:: https://travis-ci.org/geex-arts/django-jet.svg?branch=master
-    :target: https://travis-ci.org/geex-arts/django-jet
+Django Jet Note
+---------------
+This repository is a fork of the `Django Jet repo <https://github.com/geex-arts/django-jet>`_, which went inactive in March of 2016. This is an effort to keep the project alive, and allow the community to provide their input via Pull Requests.
 
 **Modern template for Django admin interface with improved functionality**
 
-Django JET has two kinds of licenses: open-source (GPLv2) and commercial. Please note that using GPLv2
-code in your programs make them GPL too. So if you don't want to comply with that we can provide you a commercial
-license (in this case please email at support@jet.geex-arts.com). The commercial license
-is designed for using Django JET in commercial products and applications without the provisions of the GPLv2.
-
-.. image:: https://raw.githubusercontent.com/geex-arts/jet/static/logo.png
-    :width: 500px
-    :height: 500px
-    :scale: 50%
-    :alt: Screenshot #1
-    :align: center
     
-* Home page: http://jet.geex-arts.com/
-* **Live Demo**: http://demo.jet.geex-arts.com/admin/
-* Documentation: http://jet.readthedocs.org/
-* PyPI: https://pypi.python.org/pypi/django-jet
-* Support: support@jet.geex-arts.com
+* Home page: NA
+* **Live Demo**: NA
+* Documentation: NA
+* PyPI: https://pypi.python.org/pypi/django-jetpack
+* Support: NA
 
 Screenshots
 ===========
