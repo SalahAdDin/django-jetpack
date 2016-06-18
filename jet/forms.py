@@ -36,6 +36,28 @@ class AddBookmarkForm(forms.ModelForm):
         return super(AddBookmarkForm, self).save(commit)
 
 
+class EditBookmarkForm(forms.ModelForm):
+    def __init__(self, request, *args, **kwargs):
+        self.request = request
+        super(EditBookmarkForm, self).__init__(*args, **kwargs)
+
+    class Meta:
+        model = Bookmark
+        fields = ['url', 'title']
+
+    def clean(self):
+        data = super(EditBookmarkForm, self).clean()
+        if not self.request.user.is_authenticated():
+            raise ValidationError('error')
+        if not self.request.user.has_perm('jet.change_bookmark'):
+            raise ValidationError('error')
+        return data
+
+    def save(self, commit=True):
+        self.instance.user = self.request.user.pk
+        return super(EditBookmarkForm, self).save(commit)
+
+
 class RemoveBookmarkForm(forms.ModelForm):
     def __init__(self, request, *args, **kwargs):
         self.request = request
