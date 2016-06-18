@@ -20,19 +20,19 @@ def get_install_requires():
     return install_requires
 
 setup(
-    name='django-jet',
+    name='django-jetpack',
     version=__import__('jet').VERSION,
     description='Modern template for Django admin interface with improved functionality',
     long_description=read('README.rst'),
-    author='Denis Kildishev',
-    author_email='support@jet.geex-arts.com',
-    url='https://github.com/geex-arts/django-jet',
+    author='Jens Astrup (+ Denis Kildishev)',
+    author_email='jensaiden@gmail.com',
+    url='https://gitlab.com/jensastrup/django-jetpack',
     packages=find_packages(),
     license='GPLv2',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Framework :: Django',
-        'License :: Free for non-commercial use',
+        'License :: Freely Distributable',
         'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
         'Intended Audience :: Developers',
         'Intended Audience :: System Administrators',
@@ -43,11 +43,12 @@ setup(
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Environment :: Web Environment',
         'Topic :: Software Development',
         'Topic :: Software Development :: User Interfaces',
     ],
     zip_safe=False,
     include_package_data=True,
-    install_requires=get_install_requires()
+    install_requires=get_install_requires(), requires=['django']
 )

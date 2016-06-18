@@ -1,14 +1,26 @@
 import django
+<<<<<<< HEAD
 from django.conf.urls import patterns, url
+=======
+from django.conf.urls import url
+>>>>>>> refs/remotes/origin/master
 from django.views.i18n import javascript_catalog
-from jet.views import add_bookmark_view, remove_bookmark_view, toggle_application_pin_view, model_lookup_view
+from jet.views import add_bookmark_view, edit_bookmark_view, remove_bookmark_view, toggle_application_pin_view, model_lookup_view
 
-urlpatterns = patterns(
-    '',
+js_info_dict = {
+    'packages': ('django.conf', 'django.contrib.admin', 'jet',),
+}
+
+urlpatterns = [
     url(
         r'^add_bookmark/$',
         add_bookmark_view,
         name='add_bookmark'
+    ),
+    url(
+        r'^edit_bookmark/$',
+        edit_bookmark_view,
+        name='edit_bookmark'
     ),
     url(
         r'^remove_bookmark/$',
@@ -27,11 +39,11 @@ urlpatterns = patterns(
     ),
     url(
         r'^jsi18n/$',
-        javascript_catalog,
-        {'packages': ('django.conf', 'django.contrib.admin', 'jet',)},
+        javascript_catalog, js_info_dict,
         name='jsi18n'
-    ),
-)
+    )
+]
 
 if django.VERSION[:2] < (1, 8):
     urlpatterns = patterns('', *urlpatterns)
+

@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-10 18:49-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: static/jet/js/main.js:275 static/jet/js/main.min.js:1
+msgid "Add"
+msgstr ""
+
+#: static/jet/js/main.js:280 static/jet/js/main.js:324
+#: static/jet/js/main.js:800 static/jet/js/main.js:896
+#: static/jet/js/main.min.js:1 static/jet/js/main.min.js:2
+#: static/jet/js/main.min.js:3
+msgid "Cancel"
+msgstr ""
+
+#: static/jet/js/main.js:319 static/jet/js/main.js:795
+#: static/jet/js/main.min.js:1 static/jet/js/main.min.js:2
+msgid "Delete"
+msgstr ""
+
+#: static/jet/js/main.js:345 static/jet/js/main.min.js:1
+msgid "Hide applications"
+msgstr ""
+
+#: static/jet/js/main.js:347 static/jet/js/main.min.js:1
+msgid "Show hidden"
+msgstr ""
+
+#: static/jet/js/main.js:891 static/jet/js/main.min.js:3
+msgid "Yes"
+msgstr ""
+
+#: static/jet/js/main.js:918 static/jet/js/main.min.js:3
+msgid "Warning: you have unsaved changes"
+msgstr ""
+
+#: static/jet/js/select2.jet.js:108 static/jet/js/select2.jet.min.js:1
+msgid "select all"
+msgstr ""
+
+#: static/jet/js/select2.jet.js:111 static/jet/js/select2.jet.min.js:1
+msgid "deselect all"
+msgstr ""
+
+#: static/jet/vendor/jquery-ui/jquery-ui.min.js:8
+msgid "'"
+msgstr ""

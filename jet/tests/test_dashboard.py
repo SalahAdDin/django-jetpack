@@ -1,3 +1,8 @@
+import django
+if django.get_version() == '1.6.11':
+    pass
+else:
+    django.setup()
 from django.contrib.auth.models import User
 from django.test import TestCase, Client
 from jet.dashboard.modules import LinkList, RecentActions

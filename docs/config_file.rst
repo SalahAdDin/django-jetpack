@@ -3,6 +3,34 @@ Config file
 
 Options available in settings.py:
 
+SITE_TITLE
+-----------------
+Django JET allows you change the site title for admin site. Use the next option:
+
+.. code:: python
+
+    SITE_TITLE = _('Anadolu DKM')
+
+
+SITE_HEADER
+-----------------
+Django JET allows you change the site header for admin site. Use the next option:
+
+.. code:: python
+
+    SITE_HEADER = _('Anadolu DKM')
+
+
+LIST_PER_PAGE
+-----------------
+Django JET allows you change the number of item list for admin site. Use the next option:
+
+.. code:: python
+
+    LIST_PER_PAGE = 25
+
+
+
 JET_DEFAULT_THEME
 -----------------
 

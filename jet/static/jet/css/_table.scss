@@ -130,7 +130,7 @@
       }
     }
 
-    tr.selected {
+    tr.selected, tr.dragging {
       border-color: $content-selected-border-color;
 
       &:last-child {
@@ -167,3 +167,4 @@
     }
   }
 }
+
