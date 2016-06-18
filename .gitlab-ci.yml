@@ -5,17 +5,16 @@ python:
   - 3.2
   - 3.3
   - 3.4
-  - 3.5
   - pypy
 env:
   - DJANGO=1.6.11
   - DJANGO=1.7.7
   - DJANGO=1.8.3
-  - DJANGO=1.9.7
-before_install:
+before_script:
   - export DJANGO_SETTINGS_MODULE=jet.tests.settings
-install:
+  - apt-get install -y python-dev python-pip
   - pip install -q Django==$DJANGO
+  - pip install .
   - pip install coverage==3.7.1
   - pip install coveralls==0.5
 script:
@@ -29,11 +28,3 @@ matrix:
       env: DJANGO=1.7.7
     - python: 2.6
       env: DJANGO=1.8.3
-    - python: 2.6
-      env: DJANGO=1.9.7
-    - python: 3.2
-      env: DJANGO=1.9.7
-    - python: 3.3
-      env: DJANGO=1.9.7
-    - python: pypy
-      env: DJANGO=1.9.7
