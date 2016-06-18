@@ -4,6 +4,23 @@
   background-color: $sidebar-background-color;
   @include transition(background-color $transitions-duration);
 
+  &-branding{
+      background-color: rgba(0, 0, 0, 0.28);
+      color: rgba(255, 255, 255, 0.75);
+      padding: 0.875rem 0.313rem;
+      text-align: center;
+      &-site-name {
+        margin: 0;
+        font-size: 1.250rem;
+        letter-spacing: 0.250rem;
+      }
+      span {
+        font-size: 0.750rem;
+        float: right;
+        margin: 0.313rem;
+      }
+  }
+
   &-menu {
     @extend .clear-list;
     margin-bottom: 32px !important;
@@ -162,7 +179,7 @@
               background-color: $sidebar-hover-background-color;
             }
 
-            &-remove {
+            &-edit, &-remove {
               &, &:visited, &:hover {
                 position: relative;
                 float: right;
