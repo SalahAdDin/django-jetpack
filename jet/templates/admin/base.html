@@ -1,10 +1,11 @@
 {% load i18n admin_static jet_tags %}
-{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}{% format_current_language LANGUAGE_CODE as LANGUAGE_CODE %}{% get_themes as THEMES %}{% get_current_theme as THEME %}{% get_current_jet_version as JET_VERSION %}{% get_side_menu_compact as SIDE_MENU_COMPACT %}
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}{% format_current_language LANGUAGE_CODE as LANGUAGE_CODE %}{% get_themes as THEMES %}{% get_current_theme as THEME %}{% get_current_jet_version as JET_VERSION %}{% get_side_menu_compact as SIDE_MENU_COMPACT %}{% supports_old_ie as SUPPORTS_OLD_IE %}
 {% block html %}<!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
 <head>
     <title>{% block title %}{% endblock %}</title>
     <meta name="copyright" content="geex-arts.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
 
     <link href="{% static "jet/vendor/select2/css/select2.min.css" %}" rel="stylesheet" />
@@ -15,7 +16,7 @@
     <link href="{% static "jet/css/themes/"|add:THEME|add:"/base.css" %}?v={{ JET_VERSION }}" rel="stylesheet" class="base-stylesheet" />
     <link href="{% static "jet/css/themes/"|add:THEME|add:"/select2.theme.css" %}?v={{ JET_VERSION }}" rel="stylesheet" class="select2-stylesheet" />
     <link href="{% static "jet/css/themes/"|add:THEME|add:"/jquery-ui.theme.css" %}?v={{ JET_VERSION }}" rel="stylesheet" class="jquery-ui-stylesheet" />
-    <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="{% block stylesheet_ie %}{% static "admin/css/ie.css" %}{% endblock %}" /><![endif]-->
+    {% if SUPPORTS_OLD_IE %}<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="{% block stylesheet_ie %}{% static "admin/css/ie.css" %}{% endblock %}" /><![endif]-->{% endif %}
     {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}" />{% endif %}
     {% block extrastyle %}{% endblock %}
 
@@ -194,7 +195,7 @@
                         </li>
 
                         {% if user.is_active and user.is_staff %}
-                            {% get_menu as app_list %}
+                            {% get_menu user as app_list %}
                             {% if app_list.apps or app_list.pinned_apps %}
                                 <form action="{% url "jet:toggle_application_pin" %}" method="POST" id="toggle-application-pin-form">
                                     {% csrf_token %}
@@ -260,6 +261,10 @@
                                         <input type="text" name="url" class="fill_width">
                                     </form>
                                 </div>
+                                <form action="{% url "jet:edit_bookmark" %}" method="POST" id="bookmarks-edit-form">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="id">
+                                </form>
                                 <form action="{% url "jet:remove_bookmark" %}" method="POST" id="bookmarks-remove-form">
                                     {% csrf_token %}
                                     <input type="hidden" name="id">
@@ -276,11 +281,17 @@
                                     {% for bookmark in bookmarks %}
                                         <li class="sidebar-menu-item-list-item">
                                             <a href="{{ bookmark.url }}" class="sidebar-menu-item-list-item-link">
+                                                <span class="sidebar-menu-item-list-item-link-edit bookmarks-edit" data-bookmark-id="{{ bookmark.pk }}">{% trans "Edit" %}</span>
                                                 <span class="sidebar-menu-item-list-item-link-remove bookmarks-remove" data-bookmark-id="{{ bookmark.pk }}">{% trans "Remove" %}</span>
                                                 {{ bookmark.title }}
                                             </a>
                                         </li>
                                     {% endfor %}
+                                    <li class="sidebar-menu-item-list-item empty">
+                                        <a href="" class="sidebar-menu-item-list-item-link">
+                                            <span class="sidebar-menu-item-list-item-link-edit bookmarks-edit">{% trans "Edit" %}</span>
+                                        </a>
+                                    </li>
                                     <li class="sidebar-menu-item-list-item empty">
                                         <a href="" class="sidebar-menu-item-list-item-link">
                                             <span class="sidebar-menu-item-list-item-link-remove bookmarks-remove">{% trans "Remove" %}</span>

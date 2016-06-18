@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+import django
 from django import template
 from django.core.urlresolvers import reverse
 from django.db.models import OneToOneField
@@ -6,10 +7,12 @@ from django.forms import CheckboxInput, ModelChoiceField, Select, ModelMultipleC
 from django.contrib.admin.widgets import RelatedFieldWidgetWrapper
 from django.utils.formats import get_format
 from django.template import loader, Context
+from django.template.defaulttags import NowNode
 from jet import settings, VERSION
 from jet.models import Bookmark, PinnedApplication
 import re
 from jet.utils import get_app_list, get_model_instance_label
+from distutils.version import StrictVersion
 
 register = template.Library()
 
@@ -52,7 +55,7 @@ class FormatBreadcrumbsNode(template.Node):
         items = filter(None, items)
 
         t = loader.get_template('admin/breadcrumbs.html')
-        c = Context({'items': items})
+        c = {'items': items}
 
         return t.render(c)
 
@@ -125,7 +128,7 @@ def format_deletable_object(deletable_object):
 
 
 @register.assignment_tag(takes_context=True)
-def get_menu(context):
+def get_menu(context, user):
     if settings.JET_SIDE_MENU_CUSTOM_APPS not in (None, False):
         app_list = get_app_list(context, False)
         app_dict = {}
@@ -165,7 +168,7 @@ def get_menu(context):
 
     current_found = False
 
-    pinned = PinnedApplication.objects.values_list('app_label', flat=True)
+    pinned = PinnedApplication.objects.filter(user=user.id).values_list('app_label', flat=True)
 
     all_aps = []
     apps = []
@@ -291,6 +294,16 @@ def get_current_theme(context):
     return settings.JET_DEFAULT_THEME
 
 
+@register.tag
+def jet_date(parser, token):
+    return NowNode(settings.JET_HEADER_DATE_FORMAT)
+
+
+@register.tag
+def jet_time(parser, token):
+    return NowNode(settings.JET_HEADER_TIME_FORMAT)
+
+
 @register.assignment_tag
 def get_themes():
     return settings.JET_THEMES
@@ -304,3 +317,11 @@ def get_current_jet_version():
 @register.assignment_tag
 def get_side_menu_compact():
     return settings.JET_SIDE_MENU_COMPACT
+
+
+@register.assignment_tag
+def supports_old_ie():
+    if StrictVersion(django.get_version()) < StrictVersion('1.9.2'):
+        return True
+    else:
+        return False

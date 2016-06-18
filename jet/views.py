@@ -1,5 +1,5 @@
 from django.views.decorators.http import require_POST, require_GET
-from jet.forms import AddBookmarkForm, RemoveBookmarkForm, ToggleApplicationPinForm, ModelLookupForm
+from jet.forms import AddBookmarkForm, EditBookmarkForm, RemoveBookmarkForm, ToggleApplicationPinForm, ModelLookupForm
 from jet.models import Bookmark
 from jet.utils import JsonResponse
 
@@ -13,6 +13,25 @@ def add_bookmark_view(request):
         bookmark = form.save()
         result['id'] = bookmark.pk
     else:
+        result['error'] = True
+
+    return JsonResponse(result)
+
+
+@require_POST
+def edit_bookmark_view(request):
+    result = {'error': False}
+    form = EditBookmarkForm(request, request.POST)
+
+    try:
+        instance = Bookmark.objects.get(pk=request.POST.get('id'))
+        form = RemoveBookmarkForm(request, request.POST, instance=instance)
+
+        if form.is_valid():
+            form.save()
+        else:
+            result['error'] = True
+    except Bookmark.DoesNotExist:
         result['error'] = True
 
     return JsonResponse(result)
