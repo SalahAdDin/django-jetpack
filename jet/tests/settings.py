@@ -71,6 +71,10 @@ MEDIA_URL = ''
 
 STATIC_URL = '/static/'
 
+SITE_TITLE = 'Django Jet Test'
+SITE_HEADER = 'Django Jet Test'
 
+LIST_PER_PAGE = 25
 
-
+JET_HEADER_DATE_FORMAT = 'l j \d\e F \d\e Y'
+JET_HEADER_TIME_FORMAT = 'h:i a'
