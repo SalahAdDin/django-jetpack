@@ -41,4 +41,5 @@ urlpatterns = [
 ]
 
 if django.VERSION[:2] < (1, 8):
+    from django.conf.urls import patterns
     urlpatterns = patterns('', *urlpatterns)
