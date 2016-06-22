@@ -36,12 +36,24 @@
     <script src="{% static "jet/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js" %}"></script>
     <script src="{% static "jet/vendor/jquery-cookie/jquery.cookie-1.4.1.min.js" %}"></script>
     {% if LANGUAGE_CODE|slice:":2" != 'en' %}
-        {% with "jet/vendor/jquery-ui/i18n/datepicker-"|add:LANGUAGE_CODE|add:".js" as url %}
+        {% with "jet/vendor/jquery-ui/i18n/datepicker-"|add:LANGUAGE_CODE|slice:":2"|add:".js" as url %}
             <script src="{% static url %}"></script>
         {% endwith %}
+        {% with "jet/vendor/jquery-ui-timepicker/i18n/jquery.ui.timepicker-"|add:LANGUAGE_CODE|slice:":2"|add:".js" as url %}
+            <script src="{% static url %}"></script>
+        {% endwith %}
+        {% with "jet/vendor/select2/js/i18n/"|add:LANGUAGE_CODE|slice:":2"|add:".js" as url %}
+            <script src="{% static url %}"></script>
+        {% endwith %}
+    {% elif LANGUAGE_CODE in 'ar-DZ cy-GB en-Au en-GB en-NZ fr-CA fr-CH it-Ch nl-BE pt-BR sr-SR zh-CN zh-HANS zh-HK zh-TW' %}
         {% with "jet/vendor/jquery-ui-timepicker/i18n/jquery.ui.timepicker-"|add:LANGUAGE_CODE|add:".js" as url %}
             <script src="{% static url %}"></script>
         {% endwith %}
+    {% elif LANGUAGE_CODE == 'pt-BR' %}
+        {% with "jet/vendor/jquery-ui-timepicker/i18n/jquery.ui.timepicker-"|add:LANGUAGE_CODE|add:".js" as url %}
+            <script src="{% static url %}"></script>
+        {% endwith %}
+    {% elif LANGUAGE_CODE in 'pt-BR sr-Cyrl zh-CN zh-TW' %}
         {% with "jet/vendor/select2/js/i18n/"|add:LANGUAGE_CODE|add:".js" as url %}
             <script src="{% static url %}"></script>
         {% endwith %}
