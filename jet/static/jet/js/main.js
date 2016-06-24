@@ -477,11 +477,20 @@
             };
 
             var djangoDateTimeFormatToJs = function(format) {
+                return format.replace(/%\w/g, function(format) {
+                    format = format.replace(/%/,"");
+                    return format;
+                });
+            };
+
+            /*
+            var djangoDateTimeFormatToJs = function(format) {
                 return format.toLowerCase().replace(/%\w/g, function(format) {
                     format = format.replace(/%/,"");
                     return format + format;
                 });
             };
+            */
 
             var updateDatetimeLayout = function() {
                 $('.form-row .datetime').each(function () {
@@ -504,28 +513,32 @@
 
                     $dateLink.append($dateButton).insertAfter($dateField);
 
-                    $dateField.datepicker({
-                        dateFormat: djangoDateTimeFormatToJs(DATE_FORMAT),
-                        showButtonPanel: true,
-                        nextText: '',
-                        prevText: ''
+                    $dateField.dateDropper({
+                        format: djangoDateTimeFormatToJs(DATE_FORMAT),
+                        lang: LANGUAGE    // TODO: get language from django settings
                     });
+
+                    // TODO: Review this
+                    /*
                     $dateLink.on('click', function (e) {
-                        if ($dateField.datepicker('widget').is(':visible')) {
-                            $dateField.datepicker('hide');
+                        if ($dateField.dateDropper('widget').is(':visible')) {
+                            $dateField.dateDropper('hide');
                         } else {
-                            $dateField.datepicker('show');
+                            $dateField.dateDropper('show');
                         }
 
                         e.preventDefault();
                     });
+                    */
                 });
 
+                /*
                 var old_goToToday = $.datepicker._gotoToday;
                 $.datepicker._gotoToday = function(id) {
                     old_goToToday.call(this,id);
                     this._selectDate(id);
                 };
+                */
             };
 
             var initTimeWidget = function() {

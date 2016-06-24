@@ -8,6 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
 
+    <link href="{% static "jet/vendor/datedropper/datedropper.min.css" %}" rel="stylesheet" />
+    <link href="{% static "jet/vendor/timedropper/timedropper.min.css" %}" rel="stylesheet" />
+
     <link href="{% static "jet/vendor/select2/css/select2.min.css" %}" rel="stylesheet" />
     <link href="{% static "jet/vendor/jquery-ui/jquery-ui.min.css" %}" rel="stylesheet" />
     <link href="{% static "jet/vendor/jquery-ui-timepicker/jquery.ui.timepicker.css" %}" rel="stylesheet" />
@@ -26,9 +29,14 @@
         var DATE_FORMAT = "{% get_date_format %}";
         var TIME_FORMAT = "{% get_time_format %}";
         var DATETIME_FORMAT = "{% get_datetime_format %}";
+        var LANGUAGE = '{{ LANGUAGE_CODE|slice:":2" }}';
     </script>
     <script type="text/javascript" src="{% url 'jet:jsi18n' %}"></script>
     <script src="{% static "jet/vendor/jquery/jquery-1.11.3.min.js" %}"></script>
+
+    <script src="{% static "jet/vendor/datedropper/datedropper.min.js" %}"></script>
+    <script src="{% static "jet/vendor/timedropper/timedropper.min.js" %}"></script>
+
     <script src="{% static "jet/vendor/jquery-ui/jquery-ui.min.js" %}"></script>
     <script src="{% static "jet/vendor/jquery-ui-timepicker/jquery.ui.timepicker.js" %}"></script>
     <script src="{% static "jet/vendor/select2/js/select2.full.min.js" %}"></script>
