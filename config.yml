@@ -24,6 +24,10 @@ PATHS:
   assets:
     - "jet/static/jet_src/**/*"
     - "!jet/static/jet_src/{img,js,scss,fonts}/**/*"
+  # Paths to fonts folder
+  fonts:
+    - "jet/static/jet_src/fonts"
+    - "node_modules/font-awesome/fonts/"
   # Paths to Sass libraries, which can then be loaded with @import
   sass:
     - "jet/static/jet_src/scss"
