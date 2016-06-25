@@ -1,7 +1,7 @@
 'use strict';
 
 import plugins  from 'gulp-load-plugins';
-// import yargs    from 'yargs';
+import yargs    from 'yargs';
 import browser  from 'browser-sync';
 import gulp     from 'gulp';
 // import panini   from 'panini';
@@ -24,6 +24,13 @@ function loadConfig() {
   return yaml.load(ymlFile);
 }
 
+function getFolders(dir) {
+    return fs.readdirSync(dir)
+      .filter(function(file) {
+        return fs.statSync(path.join(dir, file)).isDirectory();
+      });
+}
+
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
  gulp.series(clean, gulp.parallel(sass, javascript, images, copy)));
@@ -42,57 +49,73 @@ function clean(done) {
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 function copy() {
   return gulp.src(PATHS.assets)
-    .pipe(gulp.dest(PATHS.dist + '/assets'));
+    .pipe(gulp.dest(PATHS.dist));
 }
 
 // Compile Sass into CSS
 // In production, the CSS is compressed
 function sass() {
-  return gulp.src('src/assets/scss/app.scss')
-    .pipe($.sourcemaps.init())
-    .pipe($.sass({
-      includePaths: PATHS.sass
-    })
-      .on('error', $.sass.logError))
-    .pipe($.autoprefixer({
-      browsers: COMPATIBILITY
-    }))
-    // Comment in the pipe below to run UnCSS in production
-    //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
-    .pipe($.if(PRODUCTION, $.cssnano()))
-    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-    .pipe(gulp.dest(PATHS.dist + '/assets/css'))
-    .pipe(browser.reload({ stream: true }));
+  var folders = getFolders(PATHS.themes);
+
+  return folders.map(folder => {
+    gulp.src(path.join(PATHS.themes, folder, '/**/*.scss'))
+      .pipe($.sourcemaps.init())
+      .pipe($.sass({
+        includePaths: PATHS.sass
+      })
+          .on('error', $.sass.logError))
+        .pipe($.autoprefixer({
+          browsers: COMPATIBILITY
+        }))
+        // Comment in the pipe below to run UnCSS in production
+        .pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
+        .pipe($.if(PRODUCTION, $.cssnano()))
+        .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+        .pipe(gulp.dest(PATHS.dist + '/css/themes/'))
+        .pipe(browser.reload({ stream: true }));
+    });
 }
 
 // Combine JavaScript into one file
 // In production, the file is minified
 function javascript() {
-  return gulp.src(PATHS.javascript)
+    var js = gulp.src(PATHS.javascript)
     .pipe($.sourcemaps.init())
     .pipe($.babel())
-    .pipe($.concat('app.js'))
+    .pipe($.concat('main.js'))
     .pipe($.if(PRODUCTION, $.uglify()
       .on('error', e => { console.log(e); })
     ))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-    .pipe(gulp.dest(PATHS.dist + '/assets/js'));
+    .pipe(gulp.dest(PATHS.dist + '/js'));
+
+    var libs = gulp.src(PATHS.libraries)
+    .pipe($.sourcemaps.init())
+    .pipe($.babel())
+    .pipe($.concat('libraries.js'))
+    .pipe($.if(PRODUCTION, $.uglify()
+      .on('error', e => { console.log(e); })
+    ))
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe(gulp.dest(PATHS.dist + '/js'));
+
+  return merge(js, libs);
 }
 
 // Copy images to the "dist" folder
 // In production, the images are compressed
 function images() {
-  return gulp.src('src/assets/img/**/*')
+  return gulp.src(PATHS.sources + '/img/**/*')
     .pipe($.if(PRODUCTION, $.imagemin({
       progressive: true
     })))
-    .pipe(gulp.dest(PATHS.dist + '/assets/img'));
+    .pipe(gulp.dest(PATHS.dist + '/img'));
 }
 
 // Copy fonts to the "dist" folder
 function fonts() {
-  return gulp.src('src/assets/fonts/**/*')
-    .pipe(gulp.dest(PATHS.dist + '/assets/fonts'));
+  return gulp.src(PATHS.sources + '/fonts/**/*')
+    .pipe(gulp.dest(PATHS.dist + '/fonts'));
 }
 
 // Start a server with BrowserSync to preview the site in
@@ -112,8 +135,8 @@ function reload(done) {
 // Watch for changes to static assets, Sass, and JavaScript
 function watch() {
   gulp.watch(PATHS.assets, copy);
-  gulp.watch('src/assets/scss/**/*.scss', sass);
-  gulp.watch('src/assets/js/**/*.js').on('change', gulp.series(javascript, browser.reload));
-  gulp.watch('src/assets/img/**/*').on('change', gulp.series(images, browser.reload));
-  gulp.watch('src/assets/fonts/**/*').on('change', gulp.series(fonts, browser.reload));
+  gulp.watch(PATHS.sources + '/scss/**/*.scss', sass);
+  gulp.watch(PATHS.sources + '/js/**/*.js').on('change', gulp.series(javascript, browser.reload));
+  gulp.watch(PATHS.sources + '/img/**/*').on('change', gulp.series(images, browser.reload));
+  gulp.watch(PATHS.sources + '/fonts/**/*').on('change', gulp.series(fonts, browser.reload));
 }
