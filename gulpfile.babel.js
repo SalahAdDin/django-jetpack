@@ -37,7 +37,7 @@ function getFolders(dir) {
 }
 
 // Build the "dist" folder by running all of the below tasks
-gulp.task('build', gulp.series(clean, gulp.parallel(sass, javascript, images, copy)));
+gulp.task('build', gulp.series(clean, gulp.parallel(sass, javascript, images, fonts, copy)));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default', gulp.series('build', server, watch));
