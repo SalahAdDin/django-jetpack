@@ -33,7 +33,7 @@
     "babel-register": "^6.9.0",
     "browser-sync": "^2.13.0",
     "font-awesome": "^4.6.3",
-    "gulp": "^3.9.1",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-babel": "^6.1.2",
     "gulp-cli": "^1.2.1",
@@ -53,6 +53,7 @@
     "merge-stream": "^1.0.0",
     "node-sass": "^3.8.0",
     "perfect-scrollbar": "^0.6.11",
+    "rimraf": "^2.5.2",
     "select2": "^4.0.3",
     "yargs": "^4.7.1"
   },
