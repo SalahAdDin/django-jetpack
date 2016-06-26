@@ -26,8 +26,8 @@ PATHS:
     - "!jet/static/jet_src/{img,js,scss,fonts}/**/*"
   # Paths to fonts folder
   fonts:
-    - "jet/static/jet_src/fonts"
-    - "node_modules/font-awesome/fonts/"
+    - "jet/static/jet_src/fonts/**/*"
+    - "node_modules/font-awesome/fonts/**/*"
   # Paths to Sass libraries, which can then be loaded with @import
   sass:
     - "jet/static/jet_src/scss"
@@ -35,30 +35,12 @@ PATHS:
     - "node_modules/font-awesome/scss/"
     - "node_modules/select2/src/scss/"
     - "node_modules/perfect-scrollbar/src/scss/"
-
-  # Paths to sass themes, which will be build
-  themes:
-    - "jet/static/jet_src/scss/themes/"
-    # - "jet/static/jet_src/scss/themes/default"
-    # - "jet/static/jet_src/scss/themes/green"
-    # - "jet/static/jet_src/scss/themes/blue"
-    # - "jet/static/jet_src/scss/themes/light-blue"
-    # - "jet/static/jet_src/scss/themes/light-gray"
-    # - "jet/static/jet_src/scss/themes/light-green"
-    # - "jet/static/jet_src/scss/themes/violet"
-    # - "jet/static/jet_src/scss/themes/light-violet"
-    # - "jet/static/jet_src/scss/themes/brown"
-    # - "jet/static/jet_src/scss/themes/yellow"
-    # - "jet/static/jet_src/scss/themes/red"
-    # - "jet/static/jet_src/scss/themes/orange"
-
   # Paths to JavaScript libraries, which are compined into one file
   javascript:
     - "jet/static/jet_src/js/!(main).js"
     - "jet/static/jet_src/js/main.js"
     - "jet/static/jet_src/js/!(select2.jet).js"
     - "jet/static/jet_src/js/select2.jet.js"
-
   libraries:
     - "node_modules/jquery/dist/jquery.js"
     # - "node_modules/jquery-ui/jquery-ui.js"

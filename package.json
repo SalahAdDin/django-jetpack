@@ -55,6 +55,7 @@
     "perfect-scrollbar": "^0.6.11",
     "rimraf": "^2.5.2",
     "select2": "^4.0.3",
+    "susy": "^2.2.12",
     "yargs": "^4.7.1"
   },
   "babel": {
