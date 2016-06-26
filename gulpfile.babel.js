@@ -37,7 +37,7 @@ function getFolders(dir) {
 }
 
 // Build the "dist" folder by running all of the below tasks
-gulp.task('build', gulp.series(clean, gulp.parallel(sass, javascript, images, fonts, copy)));
+gulp.task('build', gulp.series(clean, gulp.parallel(sass, javascript, images, fonts)));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default', gulp.series('build', server, watch));
@@ -46,13 +46,6 @@ gulp.task('default', gulp.series('build', server, watch));
 // This happens every time a build starts
 function clean(done) {
     rimraf(PATHS.dist, done);
-}
-
-// Copy files out of the assets folder
-// This task skips over the "img", "js", and "scss" folders, which are parsed separately
-function copy() {
-    return gulp.src(PATHS.assets)
-        .pipe(gulp.dest(PATHS.dist));
 }
 
 // Compile Sass into CSS
@@ -140,7 +133,6 @@ function reload(done) {
 
 // Watch for changes to static assets, Sass, and JavaScript
 function watch() {
-    gulp.watch(PATHS.assets, copy);
     gulp.watch(PATHS.sources + '/scss/**/*.scss', sass);
     gulp.watch(PATHS.sources + '/js/**/*.js').on('change', gulp.series(javascript, browser.reload));
     gulp.watch(PATHS.sources + '/img/**/*').on('change', gulp.series(images, browser.reload));
