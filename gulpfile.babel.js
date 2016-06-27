@@ -52,8 +52,8 @@ function clean(done) {
 // In production, the CSS is compressed
 function sass() {
     var folders = getFolders(themesPath);
-    return folders.map(folder => {
-        gulp.src(path.join(themesPath, folder, '/**/*.scss'))
+    return merge.apply(null, folders.map(folder => {
+        return gulp.src(path.join(themesPath, folder, '/**/*.scss'))
             .pipe($.sourcemaps.init())
             .pipe($.sass({
                 includePaths: PATHS.sass
@@ -68,7 +68,7 @@ function sass() {
             .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
             .pipe(gulp.dest(PATHS.dist + '/css/themes/' + folder))
             .pipe(browser.reload({stream: true}));
-    });
+    }));
 }
 
 // Combine JavaScript into one file

@@ -9,7 +9,7 @@ COMPATIBILITY:
 # UnCSS will use these settings
 UNCSS_OPTIONS:
   html:
-    - "src/**/*.html"
+    - "src/**/*.html" # TODO: Add all django-jetpack templates
   ignore:
     - !!js/regexp .foundation-mq
     - !!js/regexp ^\.is-.*
@@ -34,6 +34,7 @@ PATHS:
     - "jet/static/jet_src/scss/select2"
     - "node_modules/font-awesome/scss/"
     - "node_modules/select2/src/scss/"
+    - "node_modules/susy/sass/"
     - "node_modules/perfect-scrollbar/src/scss/"
   # Paths to JavaScript libraries, which are compined into one file
   javascript:
