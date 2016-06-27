@@ -8,7 +8,8 @@ from django.contrib.admin.widgets import RelatedFieldWidgetWrapper
 from django.utils.formats import get_format
 from django.template import loader, Context
 from django.template.defaulttags import NowNode
-from jet import settings, VERSION
+from jet import settings
+from jet import __version__ as VERSION
 from jet.models import Bookmark, PinnedApplication
 import re
 from jet.utils import get_app_list, get_model_instance_label

@@ -10,6 +10,13 @@ $grid-max-width: 1200px;
 $grid-content-indent: 0.7;
 $global-font-size: 16px;
 
+$breakpoint-no-query-fallbacks: true;
+
+$mobile:                480px;
+$tablet:                768px;
+$desktop:               992px;
+$desktop-xl:            1200px;
+
 // General
 
 $background-color: #ecf2f6 !default;

@@ -1,21 +1,30 @@
+@import "node_modules/susy/sass/susy";
 @import "globals";
+@import "_helpers";
 
 .login {
-  $width: 400px;
-  $expected-height: 230px;
+  @include container(12/5 center);
+  width: span(5);
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
 
   background: $login-background-color;
-  position: relative;
+
+  @include susy-media(rem-calc(0) rem-calc(635)){
+    width: span(12);
+
+    section {
+      margin: auto;
+    }
+  };
 
   &-title {
     width: 100%;
     color: $login-title-text-color;
-    font-size: 36px;
+    font-size: rem-calc(36);
     text-transform: uppercase;
     text-align: center;
-    position: absolute;
-    top: 50%;
-    margin-top: -($expected-height / 2) - 60px;
 
     .bright {
       color: $login-title-contrast-text-color;
@@ -24,48 +33,46 @@
   }
 
   &-container {
-    border-radius: 4px;
-    width: $width;
+    border-radius: rem-calc(4);
     overflow: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -($width / 2);
-    margin-top: -($expected-height / 2);
+    margin: rem-calc(20) 0;
 
     &-header {
       background: $login-header-background-color;
       color: $login-header-text-color;
       text-transform: uppercase;
-      padding: 10px;
-      font-size: 11px;
+      padding: rem-calc(10);
+      font-size: rem-calc(12);
       font-weight: bold;
     }
 
     &-content {
       background: $login-content-background-color;
-      height: 100%;
-      padding: 30px;
+      // height: 100%;
+      padding: rem-calc(30);
     }
 
     &-submit-row {
       text-align: center;
-      margin-top: 20px;
+      margin-top: rem-calc(20);
     }
   }
 }
 
 .login-form {
   .form-row {
-    padding: 6px 0;
+    padding: rem-calc(6) 0;
     clear: both;
 
     label {
       display: block;
-      padding: 6px 10px 0 0;
+      padding: rem-calc(6) rem-calc(10) 0 0;
       float: left;
-      width: 130px;
+      width: span(4);
       word-wrap: break-word;
+      @include susy-media(rem-calc(0) rem-calc(635)){
+        width: span(12);
+      };
     }
 
     &.errors label {
@@ -73,7 +80,10 @@
     }
 
     input[type="text"], input[type="password"] {
-      width: 170px;
+      width: span(6);
+      @include susy-media(rem-calc(0) rem-calc(635)){
+        width: span(12);
+      };
     }
 
     .errorlist {
@@ -81,10 +91,5 @@
       @extend .small;
       color: $error-text-color;
     }
-  }
-
-  .submit-row {
-    margin-top: 20px;
-    text-align: center;
   }
 }
