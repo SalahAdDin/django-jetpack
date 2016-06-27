@@ -1,11 +1,16 @@
-/*
- * Default variable values
- * Create separate themes/theme/_variables.scss to override these variables
- */
 
-/*
- * General
- */
+//Default variable values
+//Create separate themes/theme/_variables.scss to override these variables
+
+
+// Layout
+$grid-columns: 12;
+$grid-gutter-width: .3;
+$grid-max-width: 1200px;
+$grid-content-indent: 0.7;
+$global-font-size: 16px;
+
+// General
 
 $background-color: #ecf2f6 !default;
 $text-color: #6f7e95 !default;
@@ -20,9 +25,7 @@ $font-size: 14px !default;
 
 $transitions-duration: 0.3s !default;
 
-/*
- * Sidebar
- */
+// Sidebar
 
 $sidebar-width: 250px !default;
 
@@ -57,9 +60,7 @@ $sidebar-popup-link-text-color: #6f7e95 !default;
 $sidebar-popup-hover-link-color: #fff !default;
 $sidebar-popup-hover-link-background-color: #639af5 !default;
 
-/*
- * Top
- */
+// Top
 
 $top-height: 32px !default;
 
@@ -80,9 +81,7 @@ $top-dropdown-hover-link-color: #ecf2f6 !default;
 $top-dropdown-icon-color: #ecf2f6 !default;
 $top-dropdown-selected-color: #e5e2a5 !default;
 
-/*
- * Content
- */
+// Content
 
 $content-background-color: #fff !default;
 $content-contrast-background-color: #f6fafc !default; //inline list bg
@@ -97,9 +96,7 @@ $content-selected-border-color: #e5e2a5 !default;
 $tab-selected-border-color: #639af5 !default;
 $tab-error-border-color: #c14747 !default;
 
-/*
- * Buttons
- */
+// Buttons
 
 $button-background-color: #d0dbe6 !default;
 $button-hover-background-color: #639af5 !default;
@@ -117,9 +114,7 @@ $danger-button-text-color: #fff !default;
 $background-button-background-color: #fff !default;
 $background-button-text-color: #6f7e95 !default;
 
-/*
- * Inputs
- */
+// Inputs
 
 $input-background-color: #fff !default;
 $input-contrast-background-color: #d0dbe6 !default;
@@ -138,9 +133,7 @@ $background-input-background-color: #fff !default;
 $background-input-border-color: #fff !default;
 $background-input-text-color: #6f7e95 !default;
 
-/*
- * Messages
- */
+// Messages
 
 $warning-color: #f0dada !default;
 $warning-text-color: #d49d9d !default;
@@ -149,9 +142,7 @@ $info-text-color: #b9b97f !default;
 $success-color: #c4ecc5 !default;
 $success-text-color: #82b982 !default;
 
-/*
- * Login
- */
+// Login
 
 $login-background-color: #354052 !default;
 $login-title-text-color: #6f7e95 !default;
@@ -160,9 +151,7 @@ $login-header-background-color: #59677e !default;
 $login-header-text-color: #fff !default;
 $login-content-background-color: #fff !default;
 
-/*
- * jQuery UI
- */
+// jQuery UI
 
 $jquery-ui-buttonpane-background: #ecf2f6 !default;
 
@@ -187,9 +176,7 @@ $jquery-ui-overlay-color: #000 !default;
 $jquery-ui-tooltip-background-color: #000 !default;
 $jquery-ui-tooltip-text-color: #fff !default;
 
-/*
- * Charts
- */
+// Charts
 
 $chart-fillColor: transparentize($hover-link-color, 0.75) !default;
 $chart-strokeColor: $hover-link-color !default;

@@ -1,3 +1,11 @@
 @import "variables";
 @import "helpers";
 @import "icons/variables";
+
+$susy: (
+  columns: $grid-columns,
+  gutters: $grid-gutter-width,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+);
