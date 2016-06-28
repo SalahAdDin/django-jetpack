@@ -41,10 +41,13 @@ a:hover {
 
 .content {
   @include span(9.5 last);
+  min-height: 100%;
+  z-index: 1;
+  box-shadow: -2px 0 6px 0 rgba(0, 0, 0, 0.25);
 }
 
 #content {
-  padding: 20px;
+  padding: rem-calc(20);
 }
 
 .module {

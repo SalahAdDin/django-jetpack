@@ -68,10 +68,10 @@
             <div id="container" class="container">
         {% endif %}
 
-            <div class="content">
+            <section class="content">
                 {% if not is_popup %}
                     {% block header %}
-                        <div id="header" class="top">
+                        <header id="header" class="top">
                             <div class="top-right">
                                 {% block top-right %}{% endblock %}
                                 {% block usertools %}
@@ -129,7 +129,7 @@
                                     {% endblock %}
                                 {% endformat_breadcrumbs %}
                             </div>
-                        </div>
+                        </header>
                     {% endblock %}
                 {% endif %}
 
@@ -148,7 +148,7 @@
                     {% block sidebar %}{% endblock %}
                 </div>
 
-                <div id="content" class="cf {% block coltype %}colM{% endblock %}">
+                <main id="content" class="cf {% block coltype %}colM{% endblock %}">
                     {% block pretitle %}{% endblock %}
                     {% if is_popup %}
                         {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
@@ -158,10 +158,10 @@
                     {% block object-tools %}{% endblock %}
                     {{ content }}
                     {% endblock %}
-                </div>
+                </main>
 
-                {% block footer %}<div id="footer"></div>{% endblock %}
-            </div>
+                {% block footer %}<footer id="footer"></footer>{% endblock %}
+            </section>
 
         {% if not is_popup %}
             <div class="related-popup-container">
