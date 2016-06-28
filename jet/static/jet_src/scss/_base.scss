@@ -1,3 +1,4 @@
+@import "node_modules/susy/sass/susy";
 @import "globals";
 
 html, body {
@@ -27,26 +28,19 @@ a:hover {
 }
 
 .container {
-  padding-left: $sidebar-width;
+  @include container;
   height: 100%;
-  position: relative;
 }
 
 .sidebar {
   position: fixed;
-  width: $sidebar-width;
+  @include span(2.5);
   height: 100%;
-  top: 0;
-  left: 0;
   overflow-y: auto;
 }
 
 .content {
-  width: 100%;
-  min-height: 100%;
-  z-index: 1;
-  box-shadow: -2px 0 6px 0 rgba(0, 0, 0, 0.25);
-  position: relative;
+  @include span(9.5 last);
 }
 
 #content {

@@ -168,11 +168,11 @@
                 <a href="#" class="related-popup-back"><span class="icon-arrow-left"></span> {% trans "back" %}</a>
                 <span class="icon-refresh loading-indicator"></span>
             </div>
-            <div class="sidebar">
-                <div class="sidebar-menu-wrapper">
-                    <div id="branding" class="sidebar-branding">
-                        {% block branding %}{% endblock %}
-                    </div>
+            <aside class="sidebar">
+                <header id="branding" class="sidebar-branding">
+                    {% block branding %}{% endblock %}
+                </header>
+                <main class="sidebar-menu-wrapper">
                     <ul class="sidebar-menu">
                         <li class="sidebar-menu-item no-horizontal-padding">
                             <ul class="sidebar-menu-item-list compact">
@@ -309,9 +309,9 @@
                             </li>
                         {% endif %}
                     </ul>
-                </div>
-                <div class="sidebar-copyright">powered by DJANGO JET</div>
-            </div>
+                </main>
+                <footer class="sidebar-copyright">powered by DJANGO JETPACK</footer>
+            </aside>
 
             {% if not SIDE_MENU_COMPACT %}
                 {% if app_list %}
