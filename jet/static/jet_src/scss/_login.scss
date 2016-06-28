@@ -11,7 +11,7 @@
 
   background: $login-background-color;
 
-  @include susy-media(rem-calc(0) rem-calc(635)){
+  @include susy-media(rem-calc(0) rem-calc($mobile)){
     width: span(12);
 
     section {
@@ -70,7 +70,7 @@
       float: left;
       width: span(4);
       word-wrap: break-word;
-      @include susy-media(rem-calc(0) rem-calc(635)){
+      @include susy-media(rem-calc(0) rem-calc($mobile)){
         width: span(12);
       };
     }
@@ -81,7 +81,7 @@
 
     input[type="text"], input[type="password"] {
       width: span(6);
-      @include susy-media(rem-calc(0) rem-calc(635)){
+      @include susy-media(rem-calc(0) rem-calc($mobile)){
         width: span(12);
       };
     }
