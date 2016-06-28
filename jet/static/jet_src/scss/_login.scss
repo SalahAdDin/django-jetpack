@@ -11,12 +11,12 @@
 
   background: $login-background-color;
 
+  section {
+    margin: auto;
+  }
+
   @include susy-media(rem-calc(0) rem-calc($mobile)){
     width: span(12);
-
-    section {
-      margin: auto;
-    }
   };
 
   &-title {

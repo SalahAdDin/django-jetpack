@@ -1,7 +1,16 @@
 {% extends "admin/base.html" %}
+{% load jet_tags %}
 
 {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
 
-{% block branding %}{% endblock %}
+{% block branding %}
+    <h1 class="sidebar-branding-site-name">
+        <span class="icon-jet"></span>{{ site_title }}
+    </h1>
+    <h4 class="sidebar-branding-time">
+        <span class="icon-calendar">{% jet_date %}</span>
+        <span class="icon-time" id="clock">{% jet_time %}</span>
+    </h4>
+{% endblock %}
 
 {% block nav-global %}{% endblock %}
