@@ -5,26 +5,31 @@
   @include transition(background-color $transitions-duration);
 
   &-branding {
+    // header{
     color: rgba(255, 255, 255, 0.75);
     text-align: center;
     &-site-name {
       background-color: rgba(0, 0, 0, 0.28);
       padding: rem-calc(16) 0;
-      margin: 0 -5%;
+      margin: 0 -8%;
       font-size: rem-calc(25);
       letter-spacing: rem-calc(4);
     }
     &-time {
       background-color: rgba(170, 170, 170, 0.3);
       text-align: right;
-      margin: 0 -5%;
+      margin: 0 -8%;
       padding: rem-calc(6) rem-calc(10);
     }
     span {
-      font-size: 0.750rem;
       display: block;
       // float: right;
+      // font-size: rem-calc(12);
       margin: 0.313rem;
+
+      &:before {
+        margin-right: rem-calc(10);
+      }
     }
   }
 
@@ -261,7 +266,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: $sidebar-width;
+    @include span(2);
     color: $sidebar-popup-text-color;
     background-color: $sidebar-popup-background-color;
     overflow-y: auto;

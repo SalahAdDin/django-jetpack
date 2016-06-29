@@ -10,10 +10,10 @@
   }
 
   &-column {
-    margin-left: 10px;
-    border: 2px dashed transparent;
-    min-height: 100px;
-    border-radius: 4px;
+    margin-left: rem-calc(10);
+    border: rem-calc(2) dashed transparent;
+    min-height: rem-calc(100);
+    border-radius: rem-calc(4);
 
     &-wrapper {
       float: left;

@@ -1,0 +1,20 @@
+.#{$jet-css-prefix}-open-external {
+    &:before {
+        content: $jet-open-external;
+    }
+}
+.#{$jet-css-prefix}-data {
+    &:before {
+        content: $jet-data;
+    }
+}
+.#{$jet-css-prefix}-new {
+    &:before {
+        content: $jet-new;
+    }
+}
+.#{$jet-css-prefix}-grid {
+    &:before {
+        content: $jet-grid;
+    }
+}

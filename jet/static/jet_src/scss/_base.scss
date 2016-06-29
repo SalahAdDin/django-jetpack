@@ -34,13 +34,14 @@ a:hover {
 
 .sidebar {
   position: fixed;
-  @include span(2.5);
+  @include span(2);
   height: 100%;
   overflow-y: auto;
 }
 
 .content {
-  @include span(9.5 last);
+  @include span(10 last);
+  padding: 0;
   min-height: 100%;
   z-index: 1;
   box-shadow: -2px 0 6px 0 rgba(0, 0, 0, 0.25);

@@ -1,0 +1,13 @@
+/* FONT PATH
+ * -------------------------- */
+
+@font-face {
+    font-family: 'JetIcons';
+    src:    url('#{$jet-font-path}/jet-icons.eot?v=#{$fa-version}');
+    src:    url('#{$jet-font-path}/jet-icons.eot?#iefix&v=#{$fa-version}') format('embedded-opentype'),
+        url('#{$jet-font-path}/jet-icons.woff?v=#{$fa-version}') format('woff'),
+        url('#{$jet-font-path}/jet-icons.ttf?v=#{$fa-version}') format('truetype'),
+        url('#{$jet-font-path}/jet-icons.svg?v=#{$fa-version}#jet-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
