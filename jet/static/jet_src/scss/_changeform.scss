@@ -71,7 +71,7 @@
       margin-left: 4px;
 
       &:before {
-        @include font-icon;
+        @include font-icon('FontAwesome');
         vertical-align: middle;
         font-size: 18px;
         content: $icon-add3;
@@ -471,7 +471,7 @@
   margin-left: 10px;
 
   &:before {
-    @include font-icon;
+    @include font-icon('FontAwesome');
     color: $button-text-color;
     vertical-align: middle;
     font-size: 20px;

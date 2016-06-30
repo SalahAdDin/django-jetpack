@@ -1,4 +1,5 @@
 @import "../globals";
+@import "../../font-awesome/variables";
 
 $input-height: 0 !default;
 
@@ -17,10 +18,10 @@ $input-height: 0 !default;
     width: 20px;
 
     b:before {
-      @include font-icon;
+      @include font-icon('FontAwesome');
       color: $input-icon-color;
       font-size: 20px;
-      content: $icon-arrow-down;
+      content: $fa-var-angle-down;
       line-height: 32px;
     }
   }

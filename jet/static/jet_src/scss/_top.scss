@@ -20,19 +20,22 @@
       color: $top-hover-link-color;
     }
 
+    .fa-angle-right{
+      font-size: rem-calc(14);
+    }
+
     &-separator {
       color: $top-separator-color;
-      margin: 0 6px 0 6px;
+      margin: rem-calc(0 6);
       font-weight: bold !important;
-      font-size: 15px;
-      vertical-align: middle;
+      font-size: rem-calc(15);
     }
   }
 
   &-right {
     float: right;
     position: relative;
-    padding-right: 175px + 10px;
+    padding-right: rem-calc(175 + 10);
   }
 
   &-user-tools {

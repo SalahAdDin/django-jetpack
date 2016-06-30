@@ -89,7 +89,7 @@
           display: inline-block;
 
           &:after {
-            @include font-icon;
+            @include font-icon('FontAwesome');
             color: $content-contrast2-text-color;
             font-size: 13px;
             font-weight: bold;

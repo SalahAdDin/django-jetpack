@@ -113,8 +113,8 @@ $global-font-size: 100% !default;
   transform: $transform;
 }
 
-@mixin font-icon {
-  font-family: 'jet-icons';
+@mixin font-icon($family) {
+  font-family: $family;
   speak: none;
   font-style: normal;
   font-weight: normal;

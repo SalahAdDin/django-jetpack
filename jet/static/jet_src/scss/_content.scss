@@ -49,7 +49,7 @@ ul.object-tools {
       border-radius: 4px;
 
       &.addlink:before {
-        @include font-icon;
+        @include font-icon('FontAwesome');
         color: $button-text-color;
         font-size: 13px;
         content: $icon-add;
