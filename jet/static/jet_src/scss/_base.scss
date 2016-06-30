@@ -43,7 +43,7 @@ a:hover {
   @include span(10 last);
   min-height: 100%;
   z-index: 1;
-  box-shadow: -2px 0 6px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: rem-calc(-2 0 6 0) rgba(0, 0, 0, 0.25);
 }
 
 #content {
