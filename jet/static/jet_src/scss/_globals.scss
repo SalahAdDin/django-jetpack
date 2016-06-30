@@ -4,8 +4,11 @@
 
 $susy: (
   columns: $grid-columns,
-  gutters: $grid-gutter-width,
+  gutters: 0,
   math: fluid,
   output: float,
   gutter-position: inside,
+  block: (
+          gutters: $grid-gutter-width,
+  )
 );

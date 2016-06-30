@@ -5,12 +5,12 @@ import yargs    from 'yargs';
 import browser  from 'browser-sync';
 import merge    from 'merge-stream';
 import gulp     from 'gulp';
-// import panini   from 'panini';
 import rimraf   from 'rimraf';
-// import sherpa   from 'style-sherpa';
 import yaml     from 'js-yaml';
 import fs       from 'fs';
 import path     from 'path';
+// import sherpa   from 'style-sherpa';
+// import panini   from 'panini';
 
 // Themes path
 const themesPath = "jet/static/jet_src/scss/themes/";
