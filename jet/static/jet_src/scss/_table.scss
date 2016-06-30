@@ -1,4 +1,5 @@
 @import "globals";
+@import "../../font-awesome/variables";
 
 .table {
   background: $content-background-color;
@@ -98,11 +99,11 @@
         }
 
         &.ascending .text:after {
-          content: $icon-arrow-down;
+          content: $fa-var-angle-down;
         }
 
         &.descending .text:after {
-          content: $icon-arrow-up;
+          content:$fa-var-angle-up;
         }
       }
     }

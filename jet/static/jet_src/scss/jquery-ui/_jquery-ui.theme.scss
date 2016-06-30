@@ -1,4 +1,5 @@
 @import "../globals";
+@import "../../font-awesome/variables";
 
 .ui-widget-content {
   border-color: $content-border-color;
@@ -80,15 +81,15 @@
 }
 
 .ui-icon-circle-triangle-e:before {
-  content: $icon-arrow-right;
+  content: $fa-var-angle-right;
 }
 
 .ui-icon-circle-triangle-w:before {
-  content: $icon-arrow-left;
+  content: $fa-var-angle-left;
 }
 
 .ui-icon-closethick:before {
-  content: $icon-cross;
+  content: $fa-var-times;
 }
 
 .ui-widget-overlay {

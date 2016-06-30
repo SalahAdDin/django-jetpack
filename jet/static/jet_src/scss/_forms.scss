@@ -1,4 +1,5 @@
 @import "globals";
+@import "../../font-awesome/variables";
 
 .base_input {
   border: 0;
@@ -115,7 +116,7 @@ input[type=checkbox] {
 
     color: $input-icon-color;
     font-size: 12px;
-    content: $icon-checkbox-outline;
+    content: $fa-var-square-o;
     letter-spacing: 5px;
 
     .action-checkbox-column & {

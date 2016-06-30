@@ -684,7 +684,7 @@
             };
 
             var initChangelistImages = function() {
-                $('img[src$="admin/img/icon-yes.gif"]').after($('<span class="fa fa-thumb-tack">'));
+                $('img[src$="admin/img/icon-yes.gif"]').after($('<span class="fa fa-check">'));
                 $('img[src$="admin/img/icon-no.gif"]').after($('<span class="fa fa-times">'));
                 $('img[src$="admin/img/icon-unknown.gif"]').after($('<span class="fa fa-question-circle-o">'));
             };
