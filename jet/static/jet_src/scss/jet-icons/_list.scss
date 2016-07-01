@@ -1,0 +1,16 @@
+.#{$jet-css-prefix}-ul {
+  padding-left: 0;
+  margin-left: $jet-li-width;
+  list-style-type: none;
+  > li { position: relative; }
+}
+.#{$jet-css-prefix}-li {
+  position: absolute;
+  left: -$jet-li-width;
+  width: $jet-li-width;
+  top: (2em / 14);
+  text-align: center;
+  &.#{$jet-css-prefix}-lg {
+    left: -$jet-li-width + (4em / 14);
+  }
+}
