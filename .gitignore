@@ -30,3 +30,5 @@ Thumbs.db
 /static
 /reports
 /uploads
+/gulpfile.babel-compiled.js
+/gulpfile.babel-compiled.js.map

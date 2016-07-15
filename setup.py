@@ -21,7 +21,7 @@ def get_install_requires():
 
 setup(
     name='django-jetpack',
-    version=__import__('jet').VERSION,
+    version=__import__('jet').__version__,
     description='Modern template for Django admin interface with improved functionality',
     long_description=read('README.rst'),
     author='Jens Astrup (+ Denis Kildishev)',
