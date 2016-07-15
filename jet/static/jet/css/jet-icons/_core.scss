@@ -1,0 +1,15 @@
+[class^="#{$jet-css-prefix}-"], [class*=" #{$jet-css-prefix}-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  // font-family: 'JetIcons' !important;
+  display: inline-block;
+  font: normal normal normal #{$jet-font-size-base}/#{$jet-line-height-base} JetIcons;
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  // line-height: $jet-line-height-base;
+  // text-transform: none;
+  // speak: none;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
