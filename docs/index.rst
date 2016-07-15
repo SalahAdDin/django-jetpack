@@ -1,6 +1,11 @@
-==========
-Django JET
-==========
+==============
+Django Jetpack
+==============
+
+Django Jet Note
+---------------
+This project is a fork of the `Django Jet project <https://github.com/geex-arts/django-jet>`_, which went inactive in
+March of 2016. This is an effort to keep the project alive, and allow the community to provide their input via Pull Requests.
 
 About
 =====
@@ -14,7 +19,7 @@ About
 
 Beta
 ====
-Current version is still in beta phase. Use it at your own risk (though may be already enough workable).
+Current version is still in beta phase. While it is used in production by various users, proceed with caution.
 
 Getting started
 ===============
@@ -51,9 +56,9 @@ is designed for using Django JET in commercial products and applications without
 Resources
 =========
 
-* Home page: http://jet.geex-arts.com/
-* **Live Demo**: http://demo.jet.geex-arts.com/admin/
-* PyPI: https://pypi.python.org/pypi/django-jet
+* Home page: https://pythonhosted.org/django-jetpack/
+* **Live Demo**: http://demo.jet.geex-arts.com/admin/ (Coming Soon)
+* PyPI: https://pypi.python.org/pypi/django-jetpack
 * Support: support@jet.geex-arts.com
 
 .. image:: https://travis-ci.org/geex-arts/django-jet.svg?branch=master
