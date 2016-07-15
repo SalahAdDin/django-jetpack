@@ -1,0 +1,22 @@
+.#{$jet-css-prefix}-border {
+  padding: .2em .25em .15em;
+  border: solid .08em $jet-border-color;
+  border-radius: .1em;
+}
+
+.#{$jet-css-prefix}-pull-left { float: left; }
+.#{$jet-css-prefix}-pull-right { float: right; }
+
+.#{$jet-css-prefix} {
+  &.#{$jet-css-prefix}-pull-left { margin-right: .3em; }
+  &.#{$jet-css-prefix}-pull-right { margin-left: .3em; }
+}
+
+/* Deprecated as of 4.4.0 */
+.pull-right { float: right; }
+.pull-left { float: left; }
+
+.#{$jet-css-prefix} {
+  &.pull-left { margin-right: .3em; }
+  &.pull-right { margin-left: .3em; }
+}

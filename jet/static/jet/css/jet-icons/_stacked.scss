@@ -1,0 +1,17 @@
+.#{$jet-css-prefix}-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+}
+.#{$jet-css-prefix}-stack-1x, .#{$jet-css-prefix}-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.#{$jet-css-prefix}-stack-1x { line-height: inherit; }
+.#{$jet-css-prefix}-stack-2x { font-size: 2em; }
+.#{$jet-css-prefix}-inverse { color: $jet-inverse; }
