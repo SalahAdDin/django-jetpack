@@ -1,10 +1,14 @@
 import django
 from django.conf.urls import url
 from django.views.i18n import javascript_catalog
+
 from jet.dashboard import dashboard
-from jet.dashboard.views import update_dashboard_modules_view, add_user_dashboard_module_view, \
-    update_dashboard_module_collapse_view, remove_dashboard_module_view, UpdateDashboardModuleView, \
-    load_dashboard_module_view, reset_dashboard_view
+from jet.dashboard.views import add_user_dashboard_module_view
+from jet.dashboard.views import load_dashboard_module_view, reset_dashboard_view
+from jet.dashboard.views import update_dashboard_module_collapse_view
+from jet.dashboard.views import update_dashboard_modules_view
+from jet.dashboard.views import UpdateDashboardModuleView
+from jet.dashboard.views import remove_dashboard_module_view
 
 js_info_dict = {
     'packages': ('jet', ),

@@ -1,18 +1,28 @@
 from __future__ import unicode_literals
+import re
+
+from distutils.version import StrictVersion
+
 import django
 from django import template
+from django.contrib.admin.widgets import RelatedFieldWidgetWrapper
 from django.core.urlresolvers import reverse
 from django.db.models import OneToOneField
-from django.forms import CheckboxInput, ModelChoiceField, Select, ModelMultipleChoiceField, SelectMultiple
-from django.contrib.admin.widgets import RelatedFieldWidgetWrapper
-from django.utils.formats import get_format
+from django.forms import CheckboxInput
+from django.forms import ModelChoiceField
+from django.forms import Select
+from django.forms import ModelMultipleChoiceField
+from django.forms import SelectMultiple
 from django.template import loader, Context
 from django.template.defaulttags import NowNode
-from jet import settings, VERSION
-from jet.models import Bookmark, PinnedApplication
-import re
-from jet.utils import get_app_list, get_model_instance_label
-from distutils.version import StrictVersion
+from django.utils.formats import get_format
+
+from jet import settings
+from jet import __version__ as VERSION
+from jet.models import Bookmark
+from jet.models import PinnedApplication
+from jet.utils import get_app_list
+from jet.utils import get_model_instance_label
 
 register = template.Library()
 

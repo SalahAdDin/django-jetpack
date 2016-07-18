@@ -1,11 +1,13 @@
 import json
+import operator
+from functools import reduce
+
 from django import forms
 from django.core.exceptions import ValidationError
 from django.db.models import Q
-import operator
+
 from jet.models import Bookmark, PinnedApplication
 from jet.utils import get_model_instance_label
-from functools import reduce
 
 try:
     from django.apps import apps
