@@ -12,8 +12,8 @@ class Bookmark(models.Model):
     date_add = models.DateTimeField(verbose_name=_('date created'), default=timezone.now)
 
     class Meta:
-        verbose_name = _('bookmark')
-        verbose_name_plural = _('bookmarks')
+        verbose_name = _('Bookmark')
+        verbose_name_plural = _('Bookmarks')
         ordering = ('date_add',)
 
     def __str__(self):
@@ -27,8 +27,8 @@ class PinnedApplication(models.Model):
     date_add = models.DateTimeField(verbose_name=_('date created'), default=timezone.now)
 
     class Meta:
-        verbose_name = _('pinned application')
-        verbose_name_plural = _('pinned applications')
+        verbose_name = _('Pinned application')
+        verbose_name_plural = _('Pinned applications')
         ordering = ('date_add',)
 
     def __str__(self):

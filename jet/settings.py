@@ -1,4 +1,5 @@
-from django.contrib.admin import AdminSite, ModelAdmin
+from django.contrib.admin import AdminSite
+from django.contrib.admin import ModelAdmin
 from django.conf import settings
 
 # Theme

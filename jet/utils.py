@@ -1,5 +1,6 @@
 import datetime
 import json
+
 try:
     from django.apps.registry import apps
 except ImportError:
@@ -7,14 +8,17 @@ except ImportError:
         from django.apps import apps # Fix Django 1.7 import issue
     except ImportError:
         pass
-from django.core.serializers.json import DjangoJSONEncoder
-from django.http import HttpResponse
-from django.core.urlresolvers import reverse, resolve, NoReverseMatch
+
 from django.contrib import admin
 from django.contrib.admin import AdminSite
+from django.contrib import messages
+from django.core.serializers.json import DjangoJSONEncoder
+from django.core.urlresolvers import reverse
+from django.core.urlresolvers import resolve
+from django.core.urlresolvers import NoReverseMatch
+from django.http import HttpResponse
 from django.utils.encoding import smart_text
 from django.utils.text import capfirst
-from django.contrib import messages
 from django.utils.encoding import force_text
 from django.utils.functional import Promise
 
