@@ -1,6 +1,8 @@
 import json
+
 from django import forms
 from django.core.exceptions import ValidationError
+
 from jet.dashboard.models import UserDashboardModule
 from jet.dashboard.utils import get_current_dashboard
 

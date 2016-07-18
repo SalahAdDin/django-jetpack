@@ -1,11 +1,14 @@
+import datetime
 import json
+
 from django import forms
 from django.contrib.admin.models import LogEntry
 from django.db.models import Q
 from django.template.loader import render_to_string
 from django.utils.translation import ugettext_lazy as _
-from jet.utils import get_app_list, LazyDateTimeEncoder
-import datetime
+
+from jet.utils import get_app_list
+from jet.utils import LazyDateTimeEncoder
 
 
 class DashboardModule(object):

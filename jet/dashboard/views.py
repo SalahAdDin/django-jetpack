@@ -1,13 +1,20 @@
 from django.contrib import messages
 from django.core.urlresolvers import reverse
 from django.forms.formsets import formset_factory
-from django.views.decorators.http import require_POST, require_GET
-from jet.dashboard.forms import UpdateDashboardModulesForm, AddUserDashboardModuleForm, \
-    UpdateDashboardModuleCollapseForm, RemoveDashboardModuleForm, ResetDashboardForm
-from jet.dashboard.models import UserDashboardModule
-from jet.utils import JsonResponse, get_app_list, SuccessMessageMixin
-from django.views.generic import UpdateView
+from django.views.decorators.http import require_POST
+from django.views.decorators.http import require_GET
 from django.utils.translation import ugettext_lazy as _
+from django.views.generic import UpdateView
+
+from jet.dashboard.forms import AddUserDashboardModuleForm
+from jet.dashboard.forms import RemoveDashboardModuleForm
+from jet.dashboard.forms import ResetDashboardForm
+from jet.dashboard.forms import UpdateDashboardModulesForm
+from jet.dashboard.forms import UpdateDashboardModuleCollapseForm
+from jet.dashboard.models import UserDashboardModule
+from jet.utils import JsonResponse
+from jet.utils import get_app_list
+from jet.utils import SuccessMessageMixin
 
 
 class UpdateDashboardModuleView(SuccessMessageMixin, UpdateView):
