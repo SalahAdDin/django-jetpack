@@ -2,6 +2,14 @@
 
 {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
 
-{% block branding %}{% endblock %}
+{% block branding %}
+    <h1 class="sidebar-branding-site-name">
+        <span class="{% block branding-icon %}jet-jet{% endblock %}"></span>{{ site_title }}
+    </h1>
+    <h4 class="sidebar-branding-time">
+        <span class="jet-calendar">{% jet_date %}</span>
+        <span class="jet-time" id="clock">{% jet_time %}</span>
+    </h4>
+{% endblock %}
 
 {% block nav-global %}{% endblock %}

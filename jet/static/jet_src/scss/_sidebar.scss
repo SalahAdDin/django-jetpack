@@ -4,36 +4,50 @@
   background-color: $sidebar-background-color;
   @include transition(background-color $transitions-duration);
 
-  &-branding{
+  &-branding {
+    // header{
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    &-site-name {
       background-color: rgba(0, 0, 0, 0.28);
-      color: rgba(255, 255, 255, 0.75);
-      padding: 0.875rem 0.313rem;
-      text-align: center;
-      &-site-name {
-        margin: 0;
-        font-size: 1.250rem;
-        letter-spacing: 0.250rem;
+      padding: rem-calc(16 0);
+      margin: 0 auto;
+      // margin: 0 -8%;
+      font-size: rem-calc(25);
+      letter-spacing: rem-calc(4);
+    }
+    &-time {
+      background-color: rgba(170, 170, 170, 0.3);
+      text-align: right;
+      margin: 0 auto;
+      // margin: 0 -8%;
+      padding: rem-calc(6 12);
+    }
+    span {
+      display: block;
+      // float: right;
+      // font-size: rem-calc(12);
+      margin: rem-calc(6);
+
+      &:before {
+        margin-right: rem-calc(10);
       }
-      span {
-        font-size: 0.750rem;
-        float: right;
-        margin: 0.313rem;
-      }
+    }
   }
 
   &-menu {
     @extend .clear-list;
-    margin-bottom: 32px !important;
+    margin-bottom: rem-calc(32) !important;
 
     &-wrapper {
       overflow: hidden;
-      height: 100%;
+      // height: 100%;
       position: relative;
     }
 
     &-item {
-      padding: 20px 24px;
-      border-bottom: 1px solid $sidebar-contrast-background-color;
+      padding: rem-calc(20 24);
+      border-bottom: rem-calc(1) solid $sidebar-contrast-background-color;
       @include transition(border-bottom-color $transitions-duration);
 
       &:last-child {
@@ -46,9 +60,9 @@
       }
 
       &-icon {
-        font-size: 18px;
+        font-size: rem-calc(18);
         vertical-align: middle;
-        margin-right: 6px;
+        margin-right: rem-calc(6);
         color: $sidebar-icon-color;
         @include transition(color $transitions-duration);
       }
@@ -74,12 +88,12 @@
       &-title {
         color: $sidebar-text-color;
         text-transform: uppercase;
-        font-size: 11px;
+        font-size: rem-calc(11);
         font-weight: bold;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        padding: 0 14px 0 24px;
+        padding: rem-calc(0 14 0 24);
         width: 100%;
         display: inline-block;
         box-sizing: border-box;
@@ -87,7 +101,7 @@
 
         &-icon {
           float: right;
-          font-size: 14px;
+          font-size: rem-calc(14);
           font-weight: bold !important;
 
           &, &:visited, &:hover {
@@ -105,12 +119,12 @@
         &, &:visited, &:hover {
           color: $sidebar-text-color;
           text-transform: uppercase;
-          font-size: 11px;
+          font-size: rem-calc(12);
           font-weight: bold;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          padding: 0 24px;
+          padding: rem-calc(0 24);
           @include transition(color $transitions-duration);
         }
 
@@ -123,10 +137,10 @@
         &, &:visited, &:hover {
           display: block;
           color: $sidebar-action-color;
-          font-size: 11px;
+          font-size: rem-calc(12);
           text-align: center;
-          margin-top: 10px;
-          padding: 8px 0;
+          margin-top: rem-calc(10);
+          padding: rem-calc(8 0);
           text-transform: uppercase;
           @include transition(color $transitions-duration, background-color $transitions-duration);
         }
@@ -141,7 +155,7 @@
         @extend .clear-list;
 
         .sidebar-menu-item-title + &:not(:empty), .sidebar-menu-item-link + &:not(:empty) {
-          margin-top: 10px !important;
+          margin-top: rem-calc(10) !important;
         }
 
         &-item {
@@ -150,15 +164,15 @@
           }
 
           &-icon {
-            font-size: 18px;
+            font-size: rem-calc(18);
             vertical-align: middle;
-            margin-right: 6px;
+            margin-right: rem-calc(6);
             color: $sidebar-icon-color;
             @include transition(color $transitions-duration);
           }
 
           &.compact &-icon {
-            font-size: 16px;
+            font-size: rem-calc(16);
           }
 
           &-link {
@@ -168,7 +182,7 @@
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
-              padding: 8px 12px 8px 24px;
+              padding: rem-calc(8 12 8 24);
               vertical-align: middle;
               position: relative;
               @include transition(color $transitions-duration, background-color $transitions-duration);
@@ -197,8 +211,8 @@
               &, &:visited, &:hover {
                 position: absolute;
                 display: none;
-                left: 4px;
-                font-size: 14px;
+                left: rem-calc(4);
+                font-size: rem-calc(14);
                 color: $sidebar-action-color;
                 @include transition(color $transitions-duration);
               }
@@ -224,9 +238,9 @@
           &-arrow {
             float: right;
             color: $sidebar-arrow-color;
-            font-size: 16px;
+            font-size: rem-calc(16);
             font-weight: bold !important;
-            margin-left: 4px;
+            margin-left: rem-calc(4);
             @include transition(color $transitions-duration);
           }
 
@@ -237,13 +251,13 @@
 
         &.compact &-item-link {
           &, &:visited, &:hover {
-            font-size: 11px;
-            padding: 6px 12px 6px 24px;
+            font-size: rem-calc(11);
+            padding: rem-calc(6 12 6 24);
             text-transform: uppercase;
           }
 
           &.padding-icon {
-            padding-left: 49px;
+            padding-left: rem-calc(50);
           }
         }
       }
@@ -251,10 +265,10 @@
   }
 
   &-popup {
+    @include span(2.4);
     position: absolute;
     top: 0;
     bottom: 0;
-    width: $sidebar-width;
     color: $sidebar-popup-text-color;
     background-color: $sidebar-popup-background-color;
     overflow-y: auto;
@@ -264,7 +278,7 @@
       background-color: transparentize($sidebar-popup-overlay-color, 0.5);
       position: fixed;
       top: 0;
-      left: $sidebar-width;
+      left: span(2);
       bottom: 0;
       right: 0;
       z-index: 3;
@@ -275,10 +289,10 @@
     }
 
     &-title {
-      font-size: 12px;
+      font-size: rem-calc(12);
       font-weight: bold;
       text-transform: uppercase;
-      padding: 20px;
+      padding: rem-calc(20);
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -293,10 +307,10 @@
       color: $sidebar-popup-search-input-text-color;
       border-radius: 0 !important;
       width: 100%;
-      height: 32px;
+      height: rem-calc(32);
       padding: 0 !important;
-      text-indent: 20px;
-      margin-bottom: 12px !important;
+      text-indent: rem-calc(20);
+      margin-bottom: rem-calc(12) !important;
     }
 
     &-list {
@@ -305,7 +319,7 @@
       &-item {
         a, a:visited, a:hover {
           color: $sidebar-popup-link-text-color;
-          padding: 8px 20px;
+          padding: rem-calc(8 20);
           display: block;
         }
 
@@ -318,16 +332,17 @@
   }
 
   &-copyright {
+    // footer {
+    // height: rem-calc(32);
     background-color: $sidebar-contrast-background-color;
     color: $sidebar-contrast-text-color;
-    height: 32px;
-    line-height: 32px;
+    line-height: rem-calc(32);
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     text-align: center;
-    font-size: 11px;
+    font-size: rem-calc(12);
     font-weight: bold;
     @include transition(background-color $transitions-duration, color $transitions-duration);
   }

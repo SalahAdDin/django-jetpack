@@ -8,6 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
 
+    <link href="{% static "jet/vendor/datedropper/datedropper.min.css" %}" rel="stylesheet" />
+    <link href="{% static "jet/vendor/timedropper/timedropper.min.css" %}" rel="stylesheet" />
+
     <link href="{% static "jet/vendor/select2/css/select2.min.css" %}" rel="stylesheet" />
     <link href="{% static "jet/vendor/jquery-ui/jquery-ui.min.css" %}" rel="stylesheet" />
     <link href="{% static "jet/vendor/jquery-ui-timepicker/jquery.ui.timepicker.css" %}" rel="stylesheet" />
@@ -26,9 +29,14 @@
         var DATE_FORMAT = "{% get_date_format %}";
         var TIME_FORMAT = "{% get_time_format %}";
         var DATETIME_FORMAT = "{% get_datetime_format %}";
+        var LANGUAGE = '{{ LANGUAGE_CODE|slice:":2" }}';
     </script>
     <script type="text/javascript" src="{% url 'jet:jsi18n' %}"></script>
     <script src="{% static "jet/vendor/jquery/jquery-1.11.3.min.js" %}"></script>
+
+    <script src="{% static "jet/vendor/datedropper/datedropper.min.js" %}"></script>
+    <script src="{% static "jet/vendor/timedropper/timedropper.min.js" %}"></script>
+
     <script src="{% static "jet/vendor/jquery-ui/jquery-ui.min.js" %}"></script>
     <script src="{% static "jet/vendor/jquery-ui-timepicker/jquery.ui.timepicker.js" %}"></script>
     <script src="{% static "jet/vendor/select2/js/select2.full.min.js" %}"></script>
@@ -50,7 +58,7 @@
         var jet = jet || {};
         jet.jQuery = jQuery.noConflict(true);
     </script>
-    <script src="{% static "jet/js/main.min.js" %}?v={{ JET_VERSION }}"></script>
+    <script src="{% static "jet/js/main.js" %}?v={{ JET_VERSION }}"></script>
     <script src="{% static "jet/js/select2.jet.min.js" %}?v={{ JET_VERSION }}"></script>
     {% block extrahead %}{% endblock %}
 </head>
@@ -60,17 +68,18 @@
             <div id="container" class="container">
         {% endif %}
 
-            <div class="content">
+            <section class="content">
                 {% if not is_popup %}
                     {% block header %}
-                        <div id="header" class="top">
+                        <header id="header" class="top">
                             <div class="top-right">
                                 {% block top-right %}{% endblock %}
+                                {% block top-right_extends %}{% endblock %}
                                 {% block usertools %}
                                     {% if user.is_active and user.is_staff %}
                                         <ul class="top-user-tools" id="user-tools">
                                             <li class="top-user-tools-welcome-msg">
-                                                <span class="top-user-tools-welcome-msg-arrow icon-arrow-down"></span>
+                                                <span class="top-user-tools-welcome-msg-arrow jet-arrow-down"></span>
                                                 {% block welcome-msg %}
                                                     {% firstof user.get_short_name user.get_username %}
                                                 {% endblock %}
@@ -100,11 +109,11 @@
                                             {% block userlinks %}
                                                 {% if user.has_usable_password %}
                                                     <li class="top-user-tools-user-link">
-                                                        <span class="top-user-tools-user-link-icon icon-key"></span> <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a>
+                                                        <span class="top-user-tools-user-link-icon jet-key"></span> <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a>
                                                     </li>
                                                 {% endif %}
                                                 <li class="top-user-tools-user-link">
-                                                    <span class="top-user-tools-user-link-icon icon-exit"></span> <a href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a>
+                                                    <span class="top-user-tools-user-link-icon jet-exit"></span> <a href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a>
                                                 </li>
                                             {% endblock %}
                                         </ul>
@@ -121,7 +130,7 @@
                                     {% endblock %}
                                 {% endformat_breadcrumbs %}
                             </div>
-                        </div>
+                        </header>
                     {% endblock %}
                 {% endif %}
 
@@ -140,7 +149,7 @@
                     {% block sidebar %}{% endblock %}
                 </div>
 
-                <div id="content" class="cf {% block coltype %}colM{% endblock %}">
+                <main id="content" class="cf {% block coltype %}colM{% endblock %}">
                     {% block pretitle %}{% endblock %}
                     {% if is_popup %}
                         {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
@@ -150,35 +159,35 @@
                     {% block object-tools %}{% endblock %}
                     {{ content }}
                     {% endblock %}
-                </div>
+                </main>
 
-                {% block footer %}<div id="footer"></div>{% endblock %}
-            </div>
+                {% block footer %}<footer id="footer"></footer>{% endblock %}
+            </section>
 
         {% if not is_popup %}
             <div class="related-popup-container">
-                <a href="#" class="related-popup-back"><span class="icon-arrow-left"></span> {% trans "back" %}</a>
-                <span class="icon-refresh loading-indicator"></span>
+                <a href="#" class="related-popup-back"><span class="jet-arrow-left"></span> {% trans "back" %}</a>
+                <span class="jet-refresh loading-indicator"></span>
             </div>
-            <div class="sidebar">
-                <div class="sidebar-menu-wrapper">
-                    <div id="branding">
-                        {% block branding %}{% endblock %}
-                    </div>
+            <aside class="sidebar">
+                <header id="branding" class="sidebar-branding">
+                    {% block branding %}{% endblock %}
+                </header>
+                <main class="sidebar-menu-wrapper">
                     <ul class="sidebar-menu">
                         <li class="sidebar-menu-item no-horizontal-padding">
                             <ul class="sidebar-menu-item-list compact">
                                 {% if user.is_active and user.is_staff %}
                                     <li class="sidebar-menu-item-list-item">
                                         <a href="{% url 'admin:index' %}" class="sidebar-menu-item-list-item-link">
-                                            <span class="sidebar-menu-item-list-item-icon icon-data"></span> {% trans 'Home' %}
+                                            <span class="sidebar-menu-item-list-item-icon jet-data"></span> {% trans 'Home' %}
                                         </a>
                                     </li>
                                 {% endif %}
                                 {% if site_url %}
                                     <li class="sidebar-menu-item-list-item">
                                         <a href="{{ site_url }}" class="sidebar-menu-item-list-item-link">
-                                            <span class="sidebar-menu-item-list-item-icon icon-open-external"></span> {% trans 'View site' %}
+                                            <span class="sidebar-menu-item-list-item-icon jet-open-external"></span> {% trans 'View site' %}
                                         </a>
                                     </li>
                                 {% endif %}
@@ -186,7 +195,7 @@
                                 {% if docsroot %}
                                     <li class="sidebar-menu-item-list-item">
                                         <a href="{{ docsroot }}" class="sidebar-menu-item-list-item-link">
-                                            <span class="sidebar-menu-item-list-item-icon icon-book"></span> {% trans 'Documentation' %}
+                                            <span class="sidebar-menu-item-list-item-icon jet-book"></span> {% trans 'Documentation' %}
                                         </a>
                                     </li>
                                 {% endif %}
@@ -227,9 +236,9 @@
                                             {% for app in app_list.pinned_apps %}
                                                 <li class="sidebar-menu-item-list-item app-item pinned app-{{ app.app_label }}" data-app-label="{{ app.app_label }}">
                                                     <a href="{{ app.app_url }}" class="sidebar-menu-item-list-item-link popup-item-link" data-popup-item-id="sidebar-popup-item-{{ app.app_label }}">
-                                                        <span class="sidebar-menu-item-list-item-arrow icon-arrow-right"></span>
-                                                        <span class="sidebar-menu-item-list-item-link-pin icon-star pin-toggle"></span>
-                                                        <span class="sidebar-menu-item-list-item-link-unpin icon-cross pin-toggle"></span>
+                                                        <span class="sidebar-menu-item-list-item-arrow jet-arrow-right"></span>
+                                                        <span class="sidebar-menu-item-list-item-link-pin jet-star pin-toggle"></span>
+                                                        <span class="sidebar-menu-item-list-item-link-unpin jet-cross pin-toggle"></span>
                                                         {% if app.name != app.app_label|capfirst|escape %}{{ app.name }}{% else %}{% trans app.app_label as app_label %}{{ app_label|capfirst|escape }}{% endif %}
                                                     </a>
                                                 </li>
@@ -240,9 +249,9 @@
                                             {% for app in app_list.apps %}
                                                 <li class="sidebar-menu-item-list-item app-item app-{{ app.app_label }}" data-app-label="{{ app.app_label }}">
                                                     <a href="{{ app.app_url }}" class="sidebar-menu-item-list-item-link popup-item-link" data-popup-item-id="sidebar-popup-item-{{ app.app_label }}">
-                                                        <span class="sidebar-menu-item-list-item-arrow icon-arrow-right"></span>
-                                                        <span class="sidebar-menu-item-list-item-link-pin icon-star pin-toggle"></span>
-                                                        <span class="sidebar-menu-item-list-item-link-unpin icon-cross pin-toggle"></span>
+                                                        <span class="sidebar-menu-item-list-item-arrow jet-arrow-right"></span>
+                                                        <span class="sidebar-menu-item-list-item-link-pin jet-star pin-toggle"></span>
+                                                        <span class="sidebar-menu-item-list-item-link-unpin jet-cross pin-toggle"></span>
                                                         {% if app.name != app.app_label|capfirst|escape %}{{ app.name }}{% else %}{% trans app.app_label as app_label %}{{ app_label|capfirst|escape }}{% endif %}
                                                     </a>
                                                 </li>
@@ -301,9 +310,9 @@
                             </li>
                         {% endif %}
                     </ul>
-                </div>
-                <div class="sidebar-copyright">powered by DJANGO JET</div>
-            </div>
+                </main>
+                <footer class="sidebar-copyright">powered by DJANGO JETPACK</footer>
+            </aside>
 
             {% if not SIDE_MENU_COMPACT %}
                 {% if app_list %}
