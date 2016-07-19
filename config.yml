@@ -9,7 +9,7 @@ COMPATIBILITY:
 # UnCSS will use these settings
 UNCSS_OPTIONS:
   html:
-    - "src/**/*.html" # TODO: Add all django-jetpack templates
+    - "jet/**/*.html"
   ignore:
     - !!js/regexp .foundation-mq
     - !!js/regexp ^\.is-.*
