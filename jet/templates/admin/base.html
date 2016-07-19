@@ -59,7 +59,7 @@
         jet.jQuery = jQuery.noConflict(true);
     </script>
     <script src="{% static "jet/js/main.js" %}?v={{ JET_VERSION }}"></script>
-    <script src="{% static "jet/js/select2.jet.min.js" %}?v={{ JET_VERSION }}"></script>
+    <script src="{% static "jet/js/select2.jet.js" %}?v={{ JET_VERSION }}"></script>
     {% block extrahead %}{% endblock %}
 </head>
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">
@@ -74,7 +74,7 @@
                         <header id="header" class="top">
                             <div class="top-right">
                                 {% block top-right %}{% endblock %}
-                                {% block top-right_extends %}{% endblock %}
+                                {% block top-right-extends %}{% endblock %}
                                 {% block usertools %}
                                     {% if user.is_active and user.is_staff %}
                                         <ul class="top-user-tools" id="user-tools">
