@@ -11,13 +11,10 @@
     <link href="{% static "jet/vendor/datedropper/datedropper.min.css" %}" rel="stylesheet" />
     <link href="{% static "jet/vendor/timedropper/timedropper.min.css" %}" rel="stylesheet" />
 
-    <link href="{% static "jet/vendor/select2/css/select2.min.css" %}" rel="stylesheet" />
     <link href="{% static "jet/vendor/jquery-ui/jquery-ui.min.css" %}" rel="stylesheet" />
     <link href="{% static "jet/vendor/jquery-ui-timepicker/jquery.ui.timepicker.css" %}" rel="stylesheet" />
-    <link href="{% static "jet/vendor/perfect-scrollbar/css/perfect-scrollbar.css" %}" rel="stylesheet" />
-    <link href="{% static "jet/css/icons/style.css" %}?v={{ JET_VERSION }}" rel="stylesheet" />
     <link href="{% static "jet/css/themes/"|add:THEME|add:"/base.css" %}?v={{ JET_VERSION }}" rel="stylesheet" class="base-stylesheet" />
-    <link href="{% static "jet/css/themes/"|add:THEME|add:"/select2.theme.css" %}?v={{ JET_VERSION }}" rel="stylesheet" class="select2-stylesheet" />
+    <link href="{% static "jet/css/themes/"|add:THEME|add:"/libraries.css" %}?v={{ JET_VERSION }}" rel="stylesheet" class="select2-stylesheet" />
     <link href="{% static "jet/css/themes/"|add:THEME|add:"/jquery-ui.theme.css" %}?v={{ JET_VERSION }}" rel="stylesheet" class="jquery-ui-stylesheet" />
     {% if SUPPORTS_OLD_IE %}<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="{% block stylesheet_ie %}{% static "admin/css/ie.css" %}{% endblock %}" /><![endif]-->{% endif %}
     {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}" />{% endif %}
@@ -32,17 +29,12 @@
         var LANGUAGE = '{{ LANGUAGE_CODE|slice:":2" }}';
     </script>
     <script type="text/javascript" src="{% url 'jet:jsi18n' %}"></script>
-    <script src="{% static "jet/vendor/jquery/jquery-1.11.3.min.js" %}"></script>
 
     <script src="{% static "jet/vendor/datedropper/datedropper.min.js" %}"></script>
     <script src="{% static "jet/vendor/timedropper/timedropper.min.js" %}"></script>
 
     <script src="{% static "jet/vendor/jquery-ui/jquery-ui.min.js" %}"></script>
     <script src="{% static "jet/vendor/jquery-ui-timepicker/jquery.ui.timepicker.js" %}"></script>
-    <script src="{% static "jet/vendor/select2/js/select2.full.min.js" %}"></script>
-    <script src="{% static "jet/vendor/perfect-scrollbar/js/perfect-scrollbar.min.js" %}"></script>
-    <script src="{% static "jet/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js" %}"></script>
-    <script src="{% static "jet/vendor/jquery-cookie/jquery.cookie-1.4.1.min.js" %}"></script>
     {% if LANGUAGE_CODE|slice:":2" != 'en' %}
         {% with "jet/vendor/jquery-ui/i18n/datepicker-"|add:LANGUAGE_CODE|add:".js" as url %}
             <script src="{% static url %}"></script>
@@ -59,7 +51,6 @@
         jet.jQuery = jQuery.noConflict(true);
     </script>
     <script src="{% static "jet/js/main.js" %}?v={{ JET_VERSION }}"></script>
-    <script src="{% static "jet/js/select2.jet.js" %}?v={{ JET_VERSION }}"></script>
     {% block extrahead %}{% endblock %}
 </head>
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">

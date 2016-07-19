@@ -1,20 +1,191 @@
-.#{$jet-css-prefix}-open-external {
-    &:before {
-        content: $jet-open-external;
-    }
+.#{$jet-css-prefix}-order {
+  &:before {
+    content: $jet-order;
+  }
 }
-.#{$jet-css-prefix}-data {
-    &:before {
-        content: $jet-data;
-    }
+
+.#{$jet-css-prefix}-reset {
+  &:before {
+    content: $jet-reset;
+  }
 }
-.#{$jet-css-prefix}-new {
-    &:before {
-        content: $jet-new;
-    }
+
+.#{$jet-css-prefix}-search {
+  &:before {
+    content: $jet-search;
+  }
 }
+
+.#{$jet-css-prefix}-user {
+  &:before {
+    content: $jet-user;
+  }
+}
+
+.#{$jet-css-prefix}-jet {
+  &:before {
+    content: $jet-jet;
+  }
+}
+
+.#{$jet-css-prefix}-refresh {
+  &:before {
+    content: $jet-refresh;
+  }
+}
+
 .#{$jet-css-prefix}-grid {
-    &:before {
-        content: $jet-grid;
-    }
+  &:before {
+    content: $jet-grid;
+  }
+}
+
+.#{$jet-css-prefix}-star {
+  &:before {
+    content: $jet-star;
+  }
+}
+
+.#{$jet-css-prefix}-pin {
+  &:before {
+    content: $jet-pin;
+  }
+}
+
+.#{$jet-css-prefix}-new {
+  &:before {
+    content: $jet-new;
+  }
+}
+
+.#{$jet-css-prefix}-edit {
+  &:before {
+    content: $jet-edit;
+  }
+}
+
+.#{$jet-css-prefix}-clock {
+  &:before {
+    content: $jet-clock;
+  }
+}
+
+.#{$jet-css-prefix}-calendar {
+  &:before {
+    content: $jet-calendar;
+  }
+}
+
+.#{$jet-css-prefix}-book {
+  &:before {
+    content: $jet-book;
+  }
+}
+
+.#{$jet-css-prefix}-open-external {
+  &:before {
+    content: $jet-open-external;
+  }
+}
+
+.#{$jet-css-prefix}-data {
+  &:before {
+    content: $jet-data;
+  }
+}
+
+.#{$jet-css-prefix}-question {
+  &:before {
+    content: $jet-question;
+  }
+}
+
+.#{$jet-css-prefix}-tick {
+  &:before {
+    content: $jet-tick;
+  }
+}
+
+.#{$jet-css-prefix}-cross {
+  &:before {
+    content: $jet-cross;
+  }
+}
+
+.#{$jet-css-prefix}-key {
+  &:before {
+    content: $jet-key;
+  }
+}
+
+.#{$jet-css-prefix}-arrow-right {
+  &:before {
+    content: $jet-arrow-right;
+  }
+}
+
+.#{$jet-css-prefix}-arrow-left {
+  &:before {
+    content: $jet-arrow-left;
+  }
+}
+
+.#{$jet-css-prefix}-arrow-down {
+  &:before {
+    content: $jet-arrow-down;
+  }
+}
+
+.#{$jet-css-prefix}-arrow-up {
+  &:before {
+    content: $jet-arrow-up;
+  }
+}
+
+.#{$jet-css-prefix}-checkbox-outline {
+  &:before {
+    content: $jet-checkbox-outline;
+  }
+}
+
+.#{$jet-css-prefix}-remove {
+  &:before {
+    content: $jet-remove;
+  }
+}
+
+.#{$jet-css-prefix}-add2 {
+  &:before {
+    content: $jet-add2;
+  }
+}
+
+.#{$jet-css-prefix}-exit {
+  &:before {
+    content: $jet-exit;
+  }
+}
+
+.#{$jet-css-prefix}-add {
+  &:before {
+    content: $jet-add;
+  }
+}
+
+.#{$jet-css-prefix}-add3 {
+  &:before {
+    content: $jet-add3;
+  }
+}
+
+.#{$jet-css-prefix}-expand {
+  &:before {
+    content: $jet-expand;
+  }
+}
+
+.#{$jet-css-prefix}-checkbox {
+  &:before {
+    content: $jet-checkbox;
+  }
 }
