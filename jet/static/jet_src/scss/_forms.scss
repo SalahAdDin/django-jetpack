@@ -115,7 +115,7 @@ input[type=checkbox] {
 
     color: $input-icon-color;
     font-size: 12px;
-    content: $icon-checkbox-outline;
+    content: $jet-checkbox-outline;
     letter-spacing: 5px;
 
     .action-checkbox-column & {
@@ -124,7 +124,7 @@ input[type=checkbox] {
   }
 
   &:checked + label:before {
-    content: $icon-checkbox;
+    content: $jet-checkbox;
   }
 }
 

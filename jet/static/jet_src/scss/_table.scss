@@ -98,11 +98,11 @@
         }
 
         &.ascending .text:after {
-          content: $icon-arrow-down;
+          content: $jet-arrow-down;
         }
 
         &.descending .text:after {
-          content: $icon-arrow-up;
+          content: $jet-arrow-up;
         }
       }
     }
