@@ -2,11 +2,11 @@
 
 <div class="dashboard-item{% if module.collapsible %} collapsible{% endif %}{% if module.model.collapsed %} collapsed{% endif %}{% if module.deletable %} deletable{% endif %}{% if module.ajax_load %} ajax{% endif %}"{% if module.ajax_load %} data-ajax-url="{% url "jet-dashboard:load_dashboard_module" pk=module.model.id %}"{% endif %} data-module-id="{{ module.model.id }}">
     <div class="dashboard-item-header">
-        <span class="dashboard-item-header-drag icon-grid"></span>
+        <span class="dashboard-item-header-drag jet-grid"></span>
         <span class="dashboard-item-header-title">
             {% if module.collapsible %}
-                <a href="#" class="dashboard-item-collapse"><span class="dashboard-item-header-collapse-button icon-arrow-down"></span></a>
-                <a href="#" class="dashboard-item-collapse"><span class="dashboard-item-header-collapse-button icon-arrow-up"></span></a>
+                <a href="#" class="dashboard-item-collapse"><span class="dashboard-item-header-collapse-button jet-arrow-down"></span></a>
+                <a href="#" class="dashboard-item-collapse"><span class="dashboard-item-header-collapse-button jet-arrow-up"></span></a>
             {% endif %}
 
             {% if module.title_url %}
@@ -16,10 +16,10 @@
             {% endif %}
 
             <span class="dashboard-item-header-buttons">
-                <a href="{% url "jet-dashboard:update_module" pk=module.model.id %}" title="{% trans "Change" %}"><span class="icon-edit"></span></a>
+                <a href="{% url "jet-dashboard:update_module" pk=module.model.id %}" title="{% trans "Change" %}"><span class="jet-edit"></span></a>
 
                 {% if module.deletable %}
-                    <a href="#" title="{% trans "Delete" %}" class="dashboard-item-remove"><span class="icon-cross"></span></a>
+                    <a href="#" title="{% trans "Delete" %}" class="dashboard-item-remove"><span class="jet-cross"></span></a>
                 {% endif %}
             </span>
         </span>
@@ -29,7 +29,7 @@
 	{{ module.pre_contenta|default_if_none:"" }}
         {% if module.ajax_load %}
             <div class="loading-indicator-wrapper">
-                <span class="icon-refresh loading-indicator"></span>
+                <span class="jet-refresh loading-indicator"></span>
             </div>
         {% else %}
             {{ module.render }}

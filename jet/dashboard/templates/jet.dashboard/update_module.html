@@ -79,7 +79,7 @@
                                         <li class="stacked-inline-list-item{% if forloop.first %} selected{% endif %}{% if form.errors %} errors{% endif %}">
                                             <a href="#" class="stacked-inline-list-item-link" data-inline-related-id="{{ children_formset.prefix }}-{{ forloop.counter0 }}">
                                                 {% if not form.initial %}
-                                                    <span class="icon-new"></span>
+                                                    <span class="jet-new"></span>
                                                 {% endif %}
                                                 <b>{{ child_name }}:</b>&nbsp;
                                                 <span class="inline_label">
@@ -90,7 +90,7 @@
                                     {% endfor %}
                                     <li class="stacked-inline-list-item empty">
                                         <a href="#" class="stacked-inline-list-item-link" data-inline-related-id="{{ children_formset.prefix }}-empty">
-                                            <span class="icon-new"></span>
+                                            <span class="jet-new"></span>
                                             <b>{{ child_name }}:</b>&nbsp;
                                             <span class="inline_label">
                                                 #{{ children_formset|length }}
@@ -124,7 +124,7 @@
                         prefix: '{{ children_formset.prefix }}',
                         adminStaticPrefix: '{% static "admin/" %}',
                         deleteText: "{% trans "Remove" %}",
-                        addText: "<span class=\"icon-add\"></span> {% blocktrans with verbose_name=child_name|capfirst %}Add another {{ verbose_name }}{% endblocktrans %}"
+                        addText: "<span class=\"jet-add\"></span> {% blocktrans with verbose_name=child_name|capfirst %}Add another {{ verbose_name }}{% endblocktrans %}"
                       });
                     })(django.jQuery);
                     </script>

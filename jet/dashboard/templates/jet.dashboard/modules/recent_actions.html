@@ -9,18 +9,18 @@
         {% for entry in module.children %}
             <li class="nowrap">
                 <span class="float-right">
-                    <span class="icon-user tooltip" title="{{ entry.user }}"></span>
-                    <span class="icon-clock tooltip" title="{{ entry.action_time }}"></span>
+                    <span class="jet-user tooltip" title="{{ entry.user }}"></span>
+                    <span class="jet-clock tooltip" title="{{ entry.action_time }}"></span>
                 </span>
 
                 {% if entry.is_addition %}
-                    <span class="icon-add3"></span>
+                    <span class="jet-add3"></span>
                 {% endif %}
                 {% if entry.is_change %}
-                    <span class="icon-edit"></span>
+                    <span class="jet-edit"></span>
                 {% endif %}
                 {% if entry.is_deletion %}
-                    <span class="icon-cross"></span>
+                    <span class="jet-cross"></span>
                 {% endif %}
 
                 {% if entry.content_type %}
