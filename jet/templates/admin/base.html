@@ -50,6 +50,7 @@
         var jet = jet || {};
         jet.jQuery = jQuery.noConflict(true);
     </script>
+    <script src="{% static "jet/js/libraries.js" %}?v={{ JET_VERSION }}"></script>
     <script src="{% static "jet/js/main.js" %}?v={{ JET_VERSION }}"></script>
     {% block extrahead %}{% endblock %}
 </head>
