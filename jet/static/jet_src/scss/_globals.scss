@@ -1,3 +1,14 @@
 @import "variables";
 @import "helpers";
 @import "jet-icons/variables";
+
+$susy: (
+  columns: $grid-columns,
+  gutters: 0,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+  block: (
+          gutters: $grid-gutter-width,
+  )
+);
