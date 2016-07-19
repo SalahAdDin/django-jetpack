@@ -37,18 +37,18 @@
                       {% if inline_admin_form.original %}
                           {% if inline_admin_form.model_admin.show_change_link and inline_admin_form.model_admin.has_registered_model %}
                               <a href="{% url inline_admin_form.model_admin.opts|admin_urlname:'change' inline_admin_form.original.pk|admin_urlquote %}" title="{% trans "Change" %} {{ inline_admin_form.original }}" class="inlinechangelink">
-                                  <span class="icon-edit"></span>
+                                  <span class="jet-edit"></span>
                               </a>
                           {% endif %}
                       {% endif %}
                   {% if inline_admin_form.show_url %}
                       <a href="{{ inline_admin_form.absolute_url }}" title="{% trans "View on site" %}">
-                        <span class="icon-open-external"></span>
+                        <span class="jet-open-external"></span>
                       </a>
                   {% endif %}
                     </p>{% endif %}
                   {% if not inline_admin_form.original %}
-                      <span class="icon-new"></span>
+                      <span class="jet-new"></span>
                   {% endif %}
                   {% if inline_admin_form.needs_explicit_pk_field %}{{ inline_admin_form.pk_field.field }}{% endif %}
                   {{ inline_admin_form.fk_field.field }}
@@ -96,7 +96,7 @@
   $("#{{ inline_admin_formset.formset.prefix }}-group .tabular.inline-related tbody tr").tabularFormset({
     prefix: "{{ inline_admin_formset.formset.prefix }}",
     adminStaticPrefix: '{% static "admin/" %}',
-    addText: "<span class=\"icon-add\"></span> {% blocktrans with inline_admin_formset.opts.verbose_name|capfirst as verbose_name %}Add another {{ verbose_name }}{% endblocktrans %}",
+    addText: "<span class=\"jet-add\"></span> {% blocktrans with inline_admin_formset.opts.verbose_name|capfirst as verbose_name %}Add another {{ verbose_name }}{% endblocktrans %}",
     deleteText: "{% trans 'Remove' %}"
   });
 })(django.jQuery);

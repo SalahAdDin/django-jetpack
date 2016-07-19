@@ -31,13 +31,13 @@
                             <li>
                                 <span class="float-right">
                                     {% if model.add_url %}
-                                        <a href="{{ model.add_url }}" class="addlink" title="{% trans 'Add' %}"><span class="icon-add3"></span></a>
+                                        <a href="{{ model.add_url }}" class="addlink" title="{% trans 'Add' %}"><span class="jet-add3"></span></a>
                                     {% else %}
                                         &nbsp;
                                     {% endif %}
 
                                     {% if model.admin_url %}
-                                        <a href="{{ model.admin_url }}" class="changelink" title="{% trans 'Change' %}"><span class="icon-edit"></span></a>
+                                        <a href="{{ model.admin_url }}" class="changelink" title="{% trans 'Change' %}"><span class="jet-edit"></span></a>
                                     {% else %}
                                         &nbsp;
                                     {% endif %}
@@ -78,18 +78,18 @@
                     {% for entry in admin_log %}
                         <li class="nowrap">
                             <span class="float-right">
-                                <span class="icon-user tooltip" title="{{ entry.user }}"></span>
-                                <span class="icon-clock tooltip" title="{{ entry.action_time }}"></span>
+                                <span class="jet-user tooltip" title="{{ entry.user }}"></span>
+                                <span class="jet-clock tooltip" title="{{ entry.action_time }}"></span>
                             </span>
 
                             {% if entry.is_addition %}
-                                <span class="icon-add3"></span>
+                                <span class="jet-add3"></span>
                             {% endif %}
                             {% if entry.is_change %}
-                                <span class="icon-edit"></span>
+                                <span class="jet-edit"></span>
                             {% endif %}
                             {% if entry.is_deletion %}
-                                <span class="icon-cross"></span>
+                                <span class="jet-cross"></span>
                             {% endif %}
 
                             {% if entry.content_type %}

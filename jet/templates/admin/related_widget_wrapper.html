@@ -6,14 +6,14 @@
         <a class="related-widget-wrapper-link change-related" id="change_id_{{ name }}"
             data-href-template="{{ change_related_template_url }}?{{ url_params }}"
             title="{% blocktrans %}Change selected {{ model }}{% endblocktrans %}">
-            <span class="icon-edit"></span>
+            <span class="jet-edit"></span>
         </a>
         {% endif %}
         {% if can_add_related %}
         <a class="related-widget-wrapper-link add-related" id="add_id_{{ name }}"
             href="{{ add_related_url }}?{{ url_params }}"
             title="{% blocktrans %}Add another {{ model }}{% endblocktrans %}">
-            <span class="icon-add3"></span>
+            <span class="jet-add3"></span>
         </a>
         {% endif %}
         {% if can_delete_related %}

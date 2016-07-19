@@ -19,7 +19,7 @@
                             <a href="#" class="stacked-inline-list-item-link" data-inline-related-id="{{ inline_admin_formset.formset.prefix }}-{% if not forloop.last %}{{ forloop.counter0 }}{% else %}empty{% endif %}">
                                 {% if not inline_admin_form.original %}
                                     <span class="stacked-inline-list-item-link-remove">{% trans "Remove" %}</span>
-                                    <span class="icon-new"></span>
+                                    <span class="jet-new"></span>
                                 {% endif %}
                                 <b>{{ inline_admin_formset.opts.verbose_name|capfirst }}:</b>&nbsp;
                                 <span class="inline_label">
@@ -42,12 +42,12 @@
                     <div class="actions">
                     {% if inline_admin_form.original and inline_admin_form.model_admin.show_change_link and inline_admin_form.model_admin.has_registered_model %}
                         <a href="{% url inline_admin_form.model_admin.opts|admin_urlname:'change' inline_admin_form.original.pk|admin_urlquote %}" class="inlinechangelink" title="{% trans "Change" %} {{ inline_admin_form.original }}">
-                            <span class="icon-edit"></span>
+                            <span class="jet-edit"></span>
                         </a>
                     {% endif %}
                     {% if inline_admin_form.show_url %}
                         <a href="{{ inline_admin_form.absolute_url }}" title="{% trans "View on site" %}">
-                            <span class="icon-open-external"></span>
+                            <span class="jet-open-external"></span>
                         </a>
                     {% endif %}
                     </div>
@@ -73,7 +73,7 @@
     prefix: '{{ inline_admin_formset.formset.prefix }}',
     adminStaticPrefix: '{% static "admin/" %}',
     deleteText: "{% trans "Remove" %}",
-    addText: "<span class=\"icon-add\"></span> {% blocktrans with verbose_name=inline_admin_formset.opts.verbose_name|capfirst %}Add another {{ verbose_name }}{% endblocktrans %}"
+    addText: "<span class=\"jet-add\"></span> {% blocktrans with verbose_name=inline_admin_formset.opts.verbose_name|capfirst %}Add another {{ verbose_name }}{% endblocktrans %}"
   });
 })(django.jQuery);
 </script>
