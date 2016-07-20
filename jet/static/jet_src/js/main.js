@@ -500,7 +500,7 @@
                 $('.form-row .vDateField').each(function () {
                     var $dateField = $(this);
                     var $dateLink = $('<a href="#">').addClass('vDateField-link');
-                    var $dateButton = $('<span>').addClass('icon-calendar');
+                    var $dateButton = $('<span>').addClass('jet-calendar');
 
                     $dateLink.append($dateButton).insertAfter($dateField);
 
@@ -532,7 +532,7 @@
                 $('.form-row .vTimeField').each(function () {
                     var $timeField = $(this);
                     var $timeLink = $('<a href="#">').addClass('vTimeField-link');
-                    var $timeButton = $('<span>').addClass('icon-clock');
+                    var $timeButton = $('<span>').addClass('jet-clock');
 
                     $timeLink.append($timeButton).insertAfter($timeField);
 
@@ -684,9 +684,9 @@
             };
 
             var initChangelistImages = function() {
-                $('img[src$="admin/img/icon-yes.gif"]').after($('<span class="icon-tick">'));
-                $('img[src$="admin/img/icon-no.gif"]').after($('<span class="icon-cross">'));
-                $('img[src$="admin/img/icon-unknown.gif"]').after($('<span class="icon-question">'));
+                $('img[src$="admin/img/icon-yes.gif"]').after($('<span class="jet-tick">'));
+                $('img[src$="admin/img/icon-no.gif"]').after($('<span class="jet-cross">'));
+                $('img[src$="admin/img/icon-unknown.gif"]').after($('<span class="jet-question">'));
             };
 
             var initChangelistRowSelection = function() {

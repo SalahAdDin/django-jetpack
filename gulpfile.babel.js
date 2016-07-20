@@ -37,7 +37,7 @@ function getFolders(dir) {
 }
 
 // Build the "dist" folder by running all of the below tasks
-gulp.task('build', gulp.series(clean, gulp.parallel(sass, javascript, images, fonts)));
+gulp.task('build', gulp.series(clean, gulp.parallel(sass, javascript, images, fonts, localization)));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default', gulp.series('build', server, watch));
@@ -117,6 +117,12 @@ function fonts() {
         .pipe(gulp.dest(PATHS.dist + '/fonts'));
 }
 
+// Copy javascript localization files to "dist" folder
+function localization() {
+    return gulp.src('node_modules/select2/dist/js/i18n/**/*.js')
+        .pipe(gulp.dest(PATHS.dist + '/js/select2/i18n'));
+}
+
 // Start a server with BrowserSync to preview the site in
 function server(done) {
     browser.init({
@@ -135,6 +141,7 @@ function reload(done) {
 function watch() {
     gulp.watch(PATHS.sources + '/scss/**/*.scss', sass);
     gulp.watch(PATHS.sources + '/js/**/*.js').on('change', gulp.series(javascript, browser.reload));
+    gulp.watch(PATHS.sources + '/js/**/*.js').on('change', gulp.series(localization, browser.reload));
     gulp.watch(PATHS.sources + '/img/**/*').on('change', gulp.series(images, browser.reload));
     gulp.watch(PATHS.sources + '/fonts/**/*').on('change', gulp.series(fonts, browser.reload));
 }
