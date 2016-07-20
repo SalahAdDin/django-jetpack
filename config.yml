@@ -38,9 +38,7 @@ PATHS:
     - "node_modules/perfect-scrollbar/src/scss/"
   # Paths to JavaScript libraries, which are compined into one file
   javascript:
-    - "jet/static/jet_src/js/!(main).js"
     - "jet/static/jet_src/js/main.js"
-    - "jet/static/jet_src/js/!(select2.jet).js"
     - "jet/static/jet_src/js/select2.jet.js"
   libraries:
     - "node_modules/jquery/dist/jquery.js"
@@ -49,3 +47,5 @@ PATHS:
     - "node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.js"
     - "node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.js"
     - "node_modules/js-cookie/src/js.cookie.js"
+    - "jet/static/jet_src/js/datedropper.js"
+    - "jet/static/jet_src/js/timedropper.js"
