@@ -4,11 +4,11 @@
 
 {% block branding %}
     <h1 class="sidebar-branding-site-name">
-        <span class="{% block branding-icon %}jet-jet{% endblock %}"></span>{{ site_title }}
+        <span class="{% block branding-icon %}jet-jet{% endblock %}" style="display: inline-block"></span>{{ site_title }}
     </h1>
     <h4 class="sidebar-branding-time">
         <span class="jet-calendar">{% jet_date %}</span>
-        <span class="jet-time" id="clock">{% jet_time %}</span>
+        <span class="jet-clock" id="clock">{% jet_time %}</span>
     </h4>
 {% endblock %}
 
