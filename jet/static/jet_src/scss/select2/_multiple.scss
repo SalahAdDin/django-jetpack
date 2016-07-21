@@ -4,7 +4,7 @@ $input-height: 0 !default;
 
 .select2-selection--multiple {
   background-color: $input-background-color !important;
-  border: 1px solid $input-border-color;
+  border: rem-calc(1) solid $input-border-color;
   cursor: text;
   height: auto !important;
   min-height: $input-height;
@@ -13,7 +13,7 @@ $input-height: 0 !default;
     box-sizing: border-box;
     list-style: none;
     margin: 0;
-    padding: 0 5px;
+    padding: rem-calc(0 5);
     width: 100%;
   }
 
@@ -21,20 +21,20 @@ $input-height: 0 !default;
     cursor: pointer;
     float: right;
     font-weight: bold;
-    margin-top: 5px;
-    margin-right: 10px;
+    margin-top: rem-calc(5);
+    margin-right: rem-calc(10);
   }
 
   .select2-selection__choice {
     background-color: $input-contrast-background-color;
     color: $input-contrast-text-color;
-    font-size: 13px;
-    border-radius: 4px;
+    font-size: rem-calc(14);
+    border-radius: rem-calc(4);
     cursor: default;
     float: left;
-    margin-right: 5px;
-    margin-top: 5px;
-    padding: 5px 5px;
+    margin-right: rem-calc(5);
+    margin-top: rem-calc(5);
+    padding: rem-calc(5 5);
     line-height: normal;
   }
 
@@ -43,7 +43,7 @@ $input-height: 0 !default;
     cursor: pointer;
     display: inline-block;
     font-weight: bold;
-    margin-right: 2px;
+    margin-right: rem-calc(2);
 
     &:hover {
       color: $input-hover-background-color;
@@ -58,12 +58,12 @@ $input-height: 0 !default;
     }
 
     .select2-selection__choice {
-      margin-left: 5px;
+      margin-left: rem-calc(5);
       margin-right: auto;
     }
 
     .select2-selection__choice__remove {
-      margin-left: 2px;
+      margin-left: rem-calc(2);
       margin-right: auto;
     }
   }

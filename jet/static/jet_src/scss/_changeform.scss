@@ -6,19 +6,19 @@
   }
 
   .form-row {
-    padding: 6px 0;
+    padding: rem-calc(6 0);
     overflow: hidden;
 
     label {
       display: block;
-      padding: 6px 10px 0 0;
+      padding: rem-calc(6 10 0 0);
       float: left;
-      width: 150px;
+      width: rem-calc(150);
       word-wrap: break-word;
 
       + p {
-        padding-top: 6px;
-        margin: 4px 0 4px (150px + 10px);
+        padding-top: rem-calc(6);
+        margin: rem-calc(4 0 4 (150 + 10));
       }
     }
 
@@ -39,7 +39,7 @@
       @extend .small;
       clear: left;
       color: $dim-text-color;
-      margin: 12px 0 0 160px;
+      margin: rem-calc(12 0 0 160);
     }
 
     .checkbox-row .help {
@@ -50,30 +50,30 @@
       @extend .clear-list;
       @extend .small;
       color: $error-text-color;
-      margin-bottom: 10px !important;
+      margin-bottom: rem-calc(10) !important;
     }
 
     .datetime {
-      margin-left: 160px;
+      margin-left: rem-calc(160);
     }
 
     .add-related span {
-      font-size: 18px;
+      font-size: rem-calc(18);
       vertical-align: middle;
     }
 
     .change-related span {
-      font-size: 20px;
+      font-size: rem-calc(20);
       vertical-align: middle;
     }
 
     .add-another {
-      margin-left: 4px;
+      margin-left: rem-calc(4);
 
       &:before {
         @include font-icon;
         vertical-align: middle;
-        font-size: 18px;
+        font-size: rem-calc(18);
         content: $jet-add3;
       }
 
@@ -83,7 +83,7 @@
     }
 
     .field-box {
-      margin-right: 20px;
+      margin-right: rem-calc(20);
       float: left;
     }
 
@@ -92,23 +92,23 @@
       display: inline-block;
       margin: 0;
       line-height: 1.5em;
-      padding: 10px;
-      border-radius: 4px;
+      padding: rem-calc(10);
+      border-radius: rem-calc(4);
 
       .clearable-file-input label {
         display: inline;
         float: none;
         padding: 0;
         width: auto;
-        margin-left: 10px;
+        margin-left: rem-calc(10);
       }
     }
   }
 
   &.aligned {
     background-color: $content-background-color;
-    border-radius: 4px;
-    padding: 20px;
+    border-radius: rem-calc(4);
+    padding: rem-calc(20);
 
     ul label {
       display: inline;
@@ -117,14 +117,14 @@
     }
 
     ul {
-      margin: 0 0 0 160px;
+      margin: rem-calc(0 0 0 160);
       padding: 0;
     }
   }
 }
 
 .submit-row {
-  padding: 20px 0;
+  padding: rem-calc(20 0);
 
   .deletelink-box {
     float: right;
@@ -135,13 +135,13 @@
 
 .changeform {
   background-color: $content-background-color;
-  border-radius: 4px;
-  min-width: 800px;
+  border-radius: rem-calc(4);
+  // min-width: 800px;
 
   &-tabs {
     @extend .clear-list;
-    border-bottom: 2px solid $background-color;
-    padding-left: 16px !important;
+    border-bottom: rem-calc(2) solid $background-color;
+    padding-left: rem-calc(16) !important;
 
     &-item {
       display: inline-block;

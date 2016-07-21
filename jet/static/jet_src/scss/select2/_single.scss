@@ -10,18 +10,18 @@ $input-height: 0 !default;
   }
 
   .select2-selection__arrow {
-    height: 26px;
+    height: rem-calc(26);
     position: absolute;
-    top: 1px;
-    right: 4px;
-    width: 20px;
+    top: rem-calc(1);
+    right: rem-calc(4);
+    width: rem-calc(20);
 
     b:before {
       @include font-icon;
       color: $input-icon-color;
-      font-size: 20px;
+      font-size: rem-calc(20);
       content: $jet-arrow-down;
-      line-height: 32px;
+      line-height: rem-calc(32);
     }
   }
 }
@@ -33,7 +33,7 @@ $input-height: 0 !default;
     }
 
     .select2-selection__arrow {
-      left: 1px;
+      left: rem-calc(1);
       right: auto;
     }
   }
