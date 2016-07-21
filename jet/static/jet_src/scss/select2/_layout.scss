@@ -1,16 +1,16 @@
 @import "../globals";
 
-$input-height: 32px;
+$input-height: rem-calc(32);
 
 .select2-container--jet {
   @import "single";
   @import "multiple";
-  min-width: 100px;
+  min-width: rem-calc(100);
 
   .select2-selection {
     background-color: $input-background-color;
-    border: 1px solid $input-border-color;
-    border-radius: 4px;
+    border: rem-calc(1) solid $input-border-color;
+    border-radius: rem-calc(4);
     outline: 0;
     height: $input-height;
 
@@ -22,7 +22,7 @@ $input-height: 32px;
     .select2-selection__rendered {
       color: $input-text-color;
       line-height: $input-height;
-      font-size: 13px;
+      font-size: rem-calc(14);
 
       .background-form & {
         color: $background-input-text-color;
@@ -38,12 +38,12 @@ $input-height: 32px;
     background-color: $input-contrast-background-color;
 
     text-align: center;
-    padding: 6px;
+    padding: rem-calc(6);
 
     &-button {
       &, &:visited, &:hover {
         color: $input-contrast-text-color;
-        margin-left: 10px;
+        margin-left: rem-calc(10);
       }
 
       &:hover {
@@ -58,8 +58,8 @@ $input-height: 32px;
 
   .select2-dropdown {
     border: 0;
-    border-radius: 4px;
-    box-shadow: 0 0 4px 0 $input-shadow-color;
+    border-radius: rem-calc(4);
+    box-shadow: 0 0 rem-calc(4) 0 $input-shadow-color;
     overflow: hidden;
     z-index: 1;
 
@@ -102,12 +102,12 @@ $input-height: 32px;
   }
 
   .select2-results > .select2-results__options {
-    max-height: 200px;
+    max-height: rem-calc(200);
     overflow-y: auto;
   }
 
   .select2-results__option {
-    font-size: 13px;
+    font-size: rem-calc(14);
 
     &[role=group] {
       padding: 0;
@@ -163,6 +163,6 @@ $input-height: 32px;
   .select2-results__group {
     cursor: default;
     display: block;
-    padding: 6px;
+    padding: rem-calc(6);
   }
 }
