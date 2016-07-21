@@ -56,9 +56,11 @@
                 {% if not is_popup %}
                     {% block header %}
                         <header id="header" class="top">
+                            <!-- TODO: Put here the menu button toggler -->
+                            <button class="button button-transparent hidden js-menu-toggler">
+                                <span class="jet-menu"></span>
+                            </button>
                             <div class="top-right">
-                                {% block top-right %}{% endblock %}
-                                {% block top-right-extends %}{% endblock %}
                                 {% block usertools %}
                                     {% if user.is_active and user.is_staff %}
                                         <ul class="top-user-tools" id="user-tools">
@@ -103,6 +105,8 @@
                                         </ul>
                                     {% endif %}
                                 {% endblock %}
+                                {% block top-right %}{% endblock %}
+                                {% block top-right-extends %}{% endblock %}
                             </div>
                             <div class="top-breadcrumbs">
                                 {% format_breadcrumbs %}

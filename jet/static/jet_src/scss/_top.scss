@@ -1,14 +1,19 @@
 @import "globals";
 
 .top {
-  padding: 20px;
+  padding: rem-calc(20);
 
   &-breadcrumbs {
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: rem-calc(12);
     font-weight: bold;
     line-height: $top-height;
     color: $top-text-color;
+    width: span(6);
+
+    @include susy-media(rem-calc(0) rem-calc($mobile)){
+      width: span(12);
+    };
 
     a, a:visited, a:hover {
       color: $top-link-color;
@@ -32,17 +37,23 @@
   &-right {
     float: right;
     position: relative;
-    padding-right: 175px + 10px;
+    // padding-right: 175px + 10px;
+    width: span(6);
+
+    @include susy-media(rem-calc(0) rem-calc($mobile)){
+      width: span(12);
+    };
   }
 
   &-user-tools {
     @extend .clear-list;
-    position: absolute;
-    top: 0;
-    right: 0;
+    // position: absolute;
+    // top: 0;
+    // right: 0;
     border: 1px solid $top-border-color;
     border-radius: 4px;
     font-size: 12px;
+    float: right;
     text-align: left;
     width: 175px;
     z-index: 1;
