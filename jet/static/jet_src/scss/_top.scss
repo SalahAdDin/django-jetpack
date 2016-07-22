@@ -53,6 +53,7 @@
 
     @include susy-media(rem-calc(0) rem-calc($svga)){
       & > div{
+        margin-bottom: rem-calc(5);
         float: left;
       }
     };

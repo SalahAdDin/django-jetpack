@@ -38,7 +38,7 @@ a:hover {
   height: 100%;
   overflow-y: auto;
 
-  @include susy-media(rem-calc(0) rem-calc($mobile)){
+  @include susy-media(rem-calc(0) rem-calc($svga)){
     @include span(6);
     display: none;
   };
@@ -50,7 +50,7 @@ a:hover {
   z-index: 1;
   box-shadow: rem-calc(-2 0 6 0) rgba(0, 0, 0, 0.25);
 
-  @include susy-media(rem-calc(0) rem-calc($mobile)){
+  @include susy-media(rem-calc(0) rem-calc($svga)){
     @include span(12);
   };
 }
