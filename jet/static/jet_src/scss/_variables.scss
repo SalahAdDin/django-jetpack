@@ -13,6 +13,7 @@ $breakpoint-no-query-fallbacks: true;
 
 $mobile:                640px;
 $tablet:                768px;
+$svga:                  840px;
 $desktop:               992px;
 $desktop-xl:            1200px;
 
@@ -68,7 +69,7 @@ $sidebar-popup-hover-link-background-color: #639af5 !default;
 
 // Top
 
-$top-height: 32px !default;
+$top-height: rem-calc(32) !default;
 
 $top-text-color: #6f7e95 !default;
 $top-separator-color: #c0d4e8 !default;

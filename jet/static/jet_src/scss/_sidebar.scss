@@ -274,7 +274,7 @@
     background-color: $sidebar-popup-background-color;
     overflow-y: auto;
 
-    @include susy-media(rem-calc(0) rem-calc($mobile)){
+    @include susy-media(rem-calc(0) rem-calc($svga)){
       @include span(6.4);
     };
 
@@ -288,8 +288,8 @@
       right: 0;
       z-index: 3;
 
-      @include susy-media(rem-calc(0) rem-calc($mobile)){
-        @include span(6);
+      @include susy-media(rem-calc(0) rem-calc($svga)){
+        left: span(6);
       };
 
     }
